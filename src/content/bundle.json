@@ -7918,6 +7918,1703 @@
           ]
         }
       ]
+    },
+    {
+      "id": "colors-clothes",
+      "title": "Colors & Clothing",
+      "description": "Name colors, talk about clothes, and describe what people are wearing.",
+      "tip": "A color before a noun needs a linker. After a vowel, add -ng: \"pulang damit\" (red clothes), \"puting sapatos\" (white shoes). After a consonant, use \"na\": \"asul na sapatos\" (blue shoes), \"itim na pantalon\" (black pants). As the predicate, drop the linker: \"Pula ang damit.\" — The clothes are red.",
+      "lessons": [
+        {
+          "id": "colors-1",
+          "title": "Colors",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "colors-1-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "pula",
+                  "right": "red"
+                },
+                {
+                  "left": "puti",
+                  "right": "white"
+                },
+                {
+                  "left": "itim",
+                  "right": "black"
+                },
+                {
+                  "left": "asul",
+                  "right": "blue"
+                }
+              ]
+            },
+            {
+              "id": "colors-1-ex2",
+              "type": "choice",
+              "prompt": "'Dilaw' means...",
+              "answer": "Yellow",
+              "distractors": [
+                "Green",
+                "Red",
+                "White"
+              ],
+              "audio": "dilaw"
+            },
+            {
+              "id": "colors-1-ex3",
+              "type": "choice",
+              "prompt": "'Berde' means...",
+              "answer": "Green",
+              "distractors": [
+                "Blue",
+                "Yellow",
+                "Black"
+              ],
+              "audio": "berde"
+            },
+            {
+              "id": "colors-1-ex4",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Anong kulay ito?",
+              "answer": "What color is this?",
+              "wordBank": [
+                "how",
+                "What",
+                "is",
+                "color",
+                "where",
+                "this",
+                "who"
+              ],
+              "audio": "anong_kulay_ito"
+            },
+            {
+              "id": "colors-1-ex5",
+              "type": "listen",
+              "audio": "pula",
+              "answer": "Pula",
+              "wordBank": [
+                "Pula",
+                "itim",
+                "puti"
+              ]
+            },
+            {
+              "id": "colors-1-ex6",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "The flower is red.",
+              "answer": "Pula ang bulaklak.",
+              "wordBank": [
+                "dilaw",
+                "langit",
+                "Pula",
+                "puti",
+                "ang",
+                "bulaklak"
+              ]
+            },
+            {
+              "id": "colors-1-ex7",
+              "type": "fill_blank",
+              "sentence": "Anong ___ ito?",
+              "translation": "What color is this?",
+              "answer": "kulay",
+              "options": [
+                "kulay",
+                "pula",
+                "itim"
+              ]
+            },
+            {
+              "id": "colors-1-ex8",
+              "type": "choice",
+              "prompt": "'Puti' means...",
+              "answer": "White",
+              "distractors": [
+                "Black",
+                "Blue",
+                "Yellow"
+              ],
+              "audio": "puti"
+            },
+            {
+              "id": "colors-1-ex9",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Asul ang langit.",
+              "answer": "The sky is blue.",
+              "wordBank": [
+                "sky",
+                "sea",
+                "blue",
+                "The",
+                "is",
+                "green",
+                "black"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "colors-2",
+          "title": "Clothes",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "colors-2-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "damit",
+                  "right": "clothes"
+                },
+                {
+                  "left": "sapatos",
+                  "right": "shoes"
+                },
+                {
+                  "left": "sombrero",
+                  "right": "hat"
+                },
+                {
+                  "left": "medyas",
+                  "right": "socks"
+                }
+              ]
+            },
+            {
+              "id": "colors-2-ex2",
+              "type": "choice",
+              "prompt": "'Pantalon' means...",
+              "answer": "Pants",
+              "distractors": [
+                "Shirt",
+                "Shoes",
+                "Hat"
+              ],
+              "audio": "pantalon"
+            },
+            {
+              "id": "colors-2-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Maganda ang damit mo.",
+              "answer": "Your clothes are beautiful.",
+              "accept": [
+                "Your dress is beautiful"
+              ],
+              "wordBank": [
+                "are",
+                "beautiful",
+                "Your",
+                "hat",
+                "shoes",
+                "clothes",
+                "socks"
+              ]
+            },
+            {
+              "id": "colors-2-ex4",
+              "type": "fill_blank",
+              "sentence": "Ano ang ___ mo?",
+              "translation": "What are you wearing?",
+              "answer": "suot",
+              "options": [
+                "suot",
+                "damit",
+                "kulay"
+              ]
+            },
+            {
+              "id": "colors-2-ex5",
+              "type": "choice",
+              "prompt": "'Ano ang suot mo?' means...",
+              "answer": "What are you wearing?",
+              "distractors": [
+                "What is your name?",
+                "Where are your clothes?",
+                "What color is it?"
+              ],
+              "audio": "ano_ang_suot_mo"
+            },
+            {
+              "id": "colors-2-ex6",
+              "type": "listen",
+              "audio": "sapatos",
+              "answer": "Sapatos",
+              "wordBank": [
+                "damit",
+                "Sapatos",
+                "medyas"
+              ]
+            },
+            {
+              "id": "colors-2-ex7",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "The shoes are expensive.",
+              "answer": "Mahal ang sapatos.",
+              "wordBank": [
+                "damit",
+                "Mahal",
+                "ang",
+                "medyas",
+                "sapatos",
+                "mura"
+              ]
+            },
+            {
+              "id": "colors-2-ex8",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Suot ko ang sombrero.",
+              "answer": "I am wearing the hat.",
+              "wordBank": [
+                "hat",
+                "pants",
+                "socks",
+                "wearing",
+                "am",
+                "I",
+                "shoes",
+                "the"
+              ]
+            },
+            {
+              "id": "colors-2-ex9",
+              "type": "choice",
+              "prompt": "'Medyas' means...",
+              "answer": "Socks",
+              "distractors": [
+                "Shoes",
+                "Hat",
+                "Pants"
+              ],
+              "audio": "medyas"
+            }
+          ]
+        },
+        {
+          "id": "colors-3",
+          "title": "Describing clothes",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "colors-3-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "pulang damit",
+                  "right": "red dress"
+                },
+                {
+                  "left": "puting sapatos",
+                  "right": "white shoes"
+                },
+                {
+                  "left": "itim na pantalon",
+                  "right": "black pants"
+                },
+                {
+                  "left": "asul na sombrero",
+                  "right": "blue hat"
+                }
+              ]
+            },
+            {
+              "id": "colors-3-ex2",
+              "type": "choice",
+              "prompt": "How do you say 'red shoes'?",
+              "answer": "Pulang sapatos",
+              "distractors": [
+                "Pula sapatos",
+                "Sapatos pula",
+                "Pula na sapatos"
+              ],
+              "audio": "pulang_sapatos"
+            },
+            {
+              "id": "colors-3-ex3",
+              "type": "choice",
+              "prompt": "How do you say 'blue socks'?",
+              "answer": "Asul na medyas",
+              "distractors": [
+                "Asulng medyas",
+                "Asul medyas",
+                "Asuling medyas"
+              ],
+              "audio": "asul_na_medyas"
+            },
+            {
+              "id": "colors-3-ex4",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Maganda ang berdeng bestida.",
+              "answer": "The green dress is beautiful.",
+              "wordBank": [
+                "red",
+                "The",
+                "shoes",
+                "dress",
+                "green",
+                "black",
+                "beautiful",
+                "is"
+              ]
+            },
+            {
+              "id": "colors-3-ex5",
+              "type": "fill_blank",
+              "sentence": "Gusto ko ng ___ damit.",
+              "translation": "I want a red dress.",
+              "answer": "pulang",
+              "options": [
+                "pulang",
+                "pula",
+                "pula na"
+              ]
+            },
+            {
+              "id": "colors-3-ex6",
+              "type": "listen",
+              "audio": "itim_na_pantalon",
+              "answer": "Itim na pantalon",
+              "wordBank": [
+                "asul",
+                "Itim",
+                "na",
+                "pantalon",
+                "puti"
+              ]
+            },
+            {
+              "id": "colors-3-ex7",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "I have white socks.",
+              "answer": "May puting medyas ako.",
+              "wordBank": [
+                "wala",
+                "May",
+                "pula",
+                "puting",
+                "medyas",
+                "ako",
+                "sapatos"
+              ]
+            },
+            {
+              "id": "colors-3-ex8",
+              "type": "fill_blank",
+              "sentence": "Gusto niya ang asul ___ sapatos.",
+              "translation": "She likes the blue shoes.",
+              "answer": "na",
+              "options": [
+                "na",
+                "ng",
+                "ang"
+              ]
+            },
+            {
+              "id": "colors-3-ex9",
+              "type": "choice",
+              "prompt": "'Dilaw na bestida' means...",
+              "answer": "Yellow dress",
+              "distractors": [
+                "Green dress",
+                "Yellow shoes",
+                "Yellow hat"
+              ],
+              "audio": "dilaw_na_bestida"
+            }
+          ]
+        },
+        {
+          "id": "colors-4",
+          "title": "What are you wearing?",
+          "xp": 15,
+          "exercises": [
+            {
+              "id": "colors-4-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "rosas",
+                  "right": "pink"
+                },
+                {
+                  "left": "kahel",
+                  "right": "orange"
+                },
+                {
+                  "left": "palda",
+                  "right": "skirt"
+                },
+                {
+                  "left": "kamiseta",
+                  "right": "shirt"
+                }
+              ]
+            },
+            {
+              "id": "colors-4-ex2",
+              "type": "choice",
+              "prompt": "'Nakasuot' means...",
+              "answer": "Wearing",
+              "distractors": [
+                "Buying",
+                "Washing",
+                "Cooking"
+              ],
+              "audio": "nakasuot"
+            },
+            {
+              "id": "colors-4-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Nakasuot siya ng pulang damit.",
+              "answer": "She is wearing a red dress.",
+              "accept": [
+                "He is wearing a red dress"
+              ],
+              "wordBank": [
+                "white",
+                "red",
+                "She",
+                "a",
+                "wearing",
+                "shoes",
+                "is",
+                "hat",
+                "dress"
+              ],
+              "audio": "nakasuot_siya_ng_pulang_damit"
+            },
+            {
+              "id": "colors-4-ex4",
+              "type": "fill_blank",
+              "sentence": "___ ako ng puting kamiseta.",
+              "translation": "I am wearing a white shirt.",
+              "answer": "Nakasuot",
+              "options": [
+                "Nakasuot",
+                "Gusto",
+                "May"
+              ]
+            },
+            {
+              "id": "colors-4-ex5",
+              "type": "choice",
+              "prompt": "Ask someone what they are wearing:",
+              "answer": "Ano ang suot mo?",
+              "distractors": [
+                "Anong kulay ito?",
+                "Nasaan ka?",
+                "Magkano ito?"
+              ],
+              "audio": "ano_ang_suot_mo"
+            },
+            {
+              "id": "colors-4-ex6",
+              "type": "listen",
+              "audio": "rosas_na_palda",
+              "answer": "Rosas na palda",
+              "wordBank": [
+                "palda",
+                "pula",
+                "bestida",
+                "na",
+                "Rosas"
+              ]
+            },
+            {
+              "id": "colors-4-ex7",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "He is wearing black shoes.",
+              "answer": "Nakasuot siya ng itim na sapatos.",
+              "wordBank": [
+                "na",
+                "siya",
+                "Nakasuot",
+                "damit",
+                "pula",
+                "itim",
+                "ng",
+                "sapatos",
+                "medyas"
+              ]
+            },
+            {
+              "id": "colors-4-ex8",
+              "type": "fill_blank",
+              "sentence": "Nakasuot ang babae ng ___ na sombrero.",
+              "translation": "The woman is wearing a yellow hat.",
+              "answer": "dilaw",
+              "options": [
+                "dilaw",
+                "berde",
+                "itim"
+              ]
+            },
+            {
+              "id": "colors-4-ex9",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Anong kulay ang bestida mo?",
+              "answer": "What color is your dress?",
+              "wordBank": [
+                "dress",
+                "color",
+                "shoes",
+                "where",
+                "What",
+                "who",
+                "your",
+                "is"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "title": "Animals",
+      "description": "Name common animals and pets, describe them, and say which ones you have.",
+      "tip": "An \"alaga\" is anything — or anyone — you look after; for an animal it means a pet. Reuse \"may\" from before and add the \"-ng\" linker: \"May alagang aso ako.\" = I have a pet dog. Say \"Wala akong alaga.\" when you have none.",
+      "lessons": [
+        {
+          "id": "animals-1",
+          "title": "Pets and animals",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "animals-1-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "aso",
+                  "right": "dog"
+                },
+                {
+                  "left": "pusa",
+                  "right": "cat"
+                },
+                {
+                  "left": "ibon",
+                  "right": "bird"
+                },
+                {
+                  "left": "hayop",
+                  "right": "animal"
+                }
+              ]
+            },
+            {
+              "id": "animals-1-ex2",
+              "type": "choice",
+              "prompt": "'Aso' means...",
+              "answer": "Dog",
+              "distractors": [
+                "Cat",
+                "Bird",
+                "Pig"
+              ],
+              "audio": "aso"
+            },
+            {
+              "id": "animals-1-ex3",
+              "type": "choice",
+              "prompt": "'Pusa' means...",
+              "answer": "Cat",
+              "distractors": [
+                "Dog",
+                "Goat",
+                "Fish"
+              ],
+              "audio": "pusa"
+            },
+            {
+              "id": "animals-1-ex4",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Ito ang aso ko.",
+              "answer": "This is my dog.",
+              "wordBank": [
+                "This",
+                "cat",
+                "bird",
+                "my",
+                "my",
+                "is",
+                "dog"
+              ]
+            },
+            {
+              "id": "animals-1-ex5",
+              "type": "fill_blank",
+              "sentence": "May ___ ako sa bahay.",
+              "translation": "I have a cat at home.",
+              "answer": "pusa",
+              "options": [
+                "pusa",
+                "isda",
+                "ibon"
+              ]
+            },
+            {
+              "id": "animals-1-ex6",
+              "type": "listen",
+              "audio": "aso",
+              "answer": "Aso",
+              "wordBank": [
+                "ibon",
+                "Aso",
+                "pusa"
+              ]
+            },
+            {
+              "id": "animals-1-ex7",
+              "type": "choice",
+              "prompt": "'Hayop' means...",
+              "answer": "Animal",
+              "distractors": [
+                "Pet",
+                "Bird",
+                "Fish"
+              ],
+              "audio": "hayop"
+            },
+            {
+              "id": "animals-1-ex8",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "The cat is beautiful.",
+              "answer": "Maganda ang pusa.",
+              "wordBank": [
+                "malaki",
+                "ang",
+                "aso",
+                "Maganda",
+                "pusa",
+                "ito"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "animals-2",
+          "title": "Describing animals",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "animals-2-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "kalabaw",
+                  "right": "carabao"
+                },
+                {
+                  "left": "kabayo",
+                  "right": "horse"
+                },
+                {
+                  "left": "daga",
+                  "right": "rat"
+                },
+                {
+                  "left": "mabagal",
+                  "right": "slow"
+                }
+              ]
+            },
+            {
+              "id": "animals-2-ex2",
+              "type": "choice",
+              "prompt": "'Kalabaw' means...",
+              "answer": "Carabao",
+              "distractors": [
+                "Horse",
+                "Cow",
+                "Goat"
+              ],
+              "audio": "kalabaw"
+            },
+            {
+              "id": "animals-2-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Malaki ang kalabaw.",
+              "answer": "The carabao is big.",
+              "wordBank": [
+                "carabao",
+                "cat",
+                "is",
+                "small",
+                "The",
+                "big",
+                "fast"
+              ]
+            },
+            {
+              "id": "animals-2-ex4",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "The horse is fast.",
+              "answer": "Mabilis ang kabayo.",
+              "wordBank": [
+                "Mabilis",
+                "aso",
+                "ang",
+                "mabagal",
+                "malaki",
+                "kabayo"
+              ]
+            },
+            {
+              "id": "animals-2-ex5",
+              "type": "fill_blank",
+              "sentence": "___ ang daga.",
+              "translation": "The rat is small.",
+              "answer": "Maliit",
+              "options": [
+                "Maliit",
+                "Malaki",
+                "Mabilis"
+              ]
+            },
+            {
+              "id": "animals-2-ex6",
+              "type": "choice",
+              "prompt": "How do you say a dog is fast?",
+              "answer": "Mabilis ang aso",
+              "distractors": [
+                "Mabagal ang aso",
+                "Malaki ang aso",
+                "Maliit ang aso"
+              ],
+              "audio": "mabilis_ang_aso"
+            },
+            {
+              "id": "animals-2-ex7",
+              "type": "listen",
+              "audio": "mabagal_ang_kalabaw",
+              "answer": "Mabagal ang kalabaw",
+              "wordBank": [
+                "mabilis",
+                "Mabagal",
+                "kabayo",
+                "kalabaw",
+                "ang"
+              ]
+            },
+            {
+              "id": "animals-2-ex8",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Malakas ang kalabaw.",
+              "answer": "The carabao is strong.",
+              "accept": [
+                "The water buffalo is strong"
+              ],
+              "wordBank": [
+                "is",
+                "small",
+                "carabao",
+                "strong",
+                "The",
+                "slow",
+                "fast"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "animals-3",
+          "title": "I have a pet",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "animals-3-ex1",
+              "type": "choice",
+              "prompt": "'Alaga' means...",
+              "answer": "Pet",
+              "distractors": [
+                "Animal",
+                "Wild",
+                "Farm"
+              ],
+              "audio": "alaga"
+            },
+            {
+              "id": "animals-3-ex2",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "may",
+                  "right": "have"
+                },
+                {
+                  "left": "wala",
+                  "right": "don't have"
+                },
+                {
+                  "left": "alaga",
+                  "right": "pet"
+                },
+                {
+                  "left": "ilan",
+                  "right": "how many"
+                }
+              ]
+            },
+            {
+              "id": "animals-3-ex3",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "I have a pet dog.",
+              "answer": "May alagang aso ako.",
+              "wordBank": [
+                "wala",
+                "May",
+                "si",
+                "alagang",
+                "aso",
+                "ako",
+                "pusa"
+              ],
+              "hint": "\"alaga\" takes a \"-ng\" linker before the animal."
+            },
+            {
+              "id": "animals-3-ex4",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Wala akong pusa.",
+              "answer": "I don't have a cat.",
+              "accept": [
+                "I have no cat"
+              ],
+              "wordBank": [
+                "bird",
+                "a",
+                "cat",
+                "have",
+                "dog",
+                "have",
+                "don't",
+                "I"
+              ]
+            },
+            {
+              "id": "animals-3-ex5",
+              "type": "fill_blank",
+              "sentence": "___ alaga ka ba?",
+              "translation": "Do you have a pet?",
+              "answer": "May",
+              "options": [
+                "May",
+                "Wala",
+                "Sino"
+              ],
+              "hint": "\"May ... ka ba?\" asks if you have something."
+            },
+            {
+              "id": "animals-3-ex6",
+              "type": "listen",
+              "audio": "may_alagang_pusa_ako",
+              "answer": "May alagang pusa ako",
+              "wordBank": [
+                "wala",
+                "ako",
+                "May",
+                "alagang",
+                "pusa",
+                "aso"
+              ]
+            },
+            {
+              "id": "animals-3-ex7",
+              "type": "choice",
+              "prompt": "How do you say you DON'T have a bird?",
+              "answer": "Wala akong ibon",
+              "distractors": [
+                "May ibon ako",
+                "Ibon ko ito",
+                "Wala si ibon"
+              ],
+              "audio": "wala_akong_ibon"
+            },
+            {
+              "id": "animals-3-ex8",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Ilan ang alaga mo?",
+              "answer": "How many pets do you have?",
+              "wordBank": [
+                "where",
+                "many",
+                "do",
+                "who",
+                "How",
+                "pets",
+                "dog",
+                "you",
+                "have"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "animals-4",
+          "title": "On the farm",
+          "xp": 15,
+          "exercises": [
+            {
+              "id": "animals-4-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "baboy",
+                  "right": "pig"
+                },
+                {
+                  "left": "kambing",
+                  "right": "goat"
+                },
+                {
+                  "left": "baka",
+                  "right": "cow"
+                },
+                {
+                  "left": "manok",
+                  "right": "chicken"
+                }
+              ]
+            },
+            {
+              "id": "animals-4-ex2",
+              "type": "choice",
+              "prompt": "'Baboy' means...",
+              "answer": "Pig",
+              "distractors": [
+                "Goat",
+                "Cow",
+                "Carabao"
+              ],
+              "audio": "baboy"
+            },
+            {
+              "id": "animals-4-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Kumakain ang baboy.",
+              "answer": "The pig is eating.",
+              "wordBank": [
+                "drinking",
+                "cow",
+                "is",
+                "goat",
+                "The",
+                "eating",
+                "pig"
+              ]
+            },
+            {
+              "id": "animals-4-ex4",
+              "type": "fill_blank",
+              "sentence": "May ___ ang ibon.",
+              "translation": "The bird has wings.",
+              "answer": "pakpak",
+              "options": [
+                "pakpak",
+                "buntot",
+                "alaga"
+              ]
+            },
+            {
+              "id": "animals-4-ex5",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "The cat has a tail.",
+              "answer": "May buntot ang pusa.",
+              "wordBank": [
+                "pakpak",
+                "ang",
+                "pusa",
+                "buntot",
+                "ibon",
+                "May",
+                "wala"
+              ]
+            },
+            {
+              "id": "animals-4-ex6",
+              "type": "listen",
+              "audio": "tumatahol_ang_aso",
+              "answer": "Tumatahol ang aso",
+              "wordBank": [
+                "lumilipad",
+                "Tumatahol",
+                "aso",
+                "ibon",
+                "ang"
+              ]
+            },
+            {
+              "id": "animals-4-ex7",
+              "type": "choice",
+              "prompt": "'Lumilipad ang ibon' means...",
+              "answer": "The bird is flying",
+              "distractors": [
+                "The bird is eating",
+                "The bird is sleeping",
+                "The dog is barking"
+              ],
+              "audio": "lumilipad_ang_ibon"
+            },
+            {
+              "id": "animals-4-ex8",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "kalabaw",
+                  "right": "carabao"
+                },
+                {
+                  "left": "kabayo",
+                  "right": "horse"
+                },
+                {
+                  "left": "buntot",
+                  "right": "tail"
+                },
+                {
+                  "left": "pakpak",
+                  "right": "wings"
+                }
+              ]
+            },
+            {
+              "id": "animals-4-ex9",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "May alagang kambing kami.",
+              "answer": "We have a pet goat.",
+              "accept": [
+                "We have a goat as a pet"
+              ],
+              "wordBank": [
+                "pig",
+                "a",
+                "We",
+                "pet",
+                "dog",
+                "have",
+                "sky",
+                "goat"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "title": "Hobbies & Free Time",
+      "description": "Say what you like to do in your free time — play, sing, dance, and watch.",
+      "tip": "\"Gusto ko\" means \"I like / I want\"; add a verb and it takes the -ng linker: \"Gusto kong kumanta\" — I want to sing. Filipinos sing anywhere — the videoke machine is a fixture at every party.",
+      "lessons": [
+        {
+          "id": "hobbies-1",
+          "title": "Hobbies and games",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "hobbies-1-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "laro",
+                  "right": "game"
+                },
+                {
+                  "left": "maglaro",
+                  "right": "to play"
+                },
+                {
+                  "left": "libangan",
+                  "right": "hobby"
+                },
+                {
+                  "left": "basketbol",
+                  "right": "basketball"
+                }
+              ]
+            },
+            {
+              "id": "hobbies-1-ex2",
+              "type": "choice",
+              "prompt": "'Libangan' means...",
+              "answer": "Hobby",
+              "distractors": [
+                "Game",
+                "Sport",
+                "Music"
+              ],
+              "audio": "libangan"
+            },
+            {
+              "id": "hobbies-1-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Naglalaro sila ng basketbol.",
+              "answer": "They are playing basketball.",
+              "accept": [
+                "They play basketball"
+              ],
+              "wordBank": [
+                "singing",
+                "basketball",
+                "are",
+                "playing",
+                "They",
+                "watching",
+                "music"
+              ]
+            },
+            {
+              "id": "hobbies-1-ex4",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "I am playing.",
+              "answer": "Naglalaro ako.",
+              "wordBank": [
+                "kumakanta",
+                "laro",
+                "Naglalaro",
+                "siya",
+                "ako"
+              ]
+            },
+            {
+              "id": "hobbies-1-ex5",
+              "type": "fill_blank",
+              "sentence": "Naglalaro sila ng ___.",
+              "translation": "They are playing basketball.",
+              "answer": "basketbol",
+              "options": [
+                "basketbol",
+                "musika",
+                "laro"
+              ]
+            },
+            {
+              "id": "hobbies-1-ex6",
+              "type": "listen",
+              "audio": "naglalaro_sila_ng_basketbol",
+              "answer": "Naglalaro sila ng basketbol",
+              "wordBank": [
+                "kumakanta",
+                "sila",
+                "basketbol",
+                "Naglalaro",
+                "ng",
+                "musika"
+              ]
+            },
+            {
+              "id": "hobbies-1-ex7",
+              "type": "choice",
+              "prompt": "'Maglaro' means...",
+              "answer": "To play",
+              "distractors": [
+                "To sing",
+                "To watch",
+                "To read"
+              ],
+              "audio": "maglaro"
+            },
+            {
+              "id": "hobbies-1-ex8",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Ano ang hilig mo?",
+              "answer": "What are you into?",
+              "accept": [
+                "What is your hobby?",
+                "What are your hobbies?",
+                "What do you like?"
+              ],
+              "wordBank": [
+                "game",
+                "where",
+                "who",
+                "What",
+                "are",
+                "into",
+                "you"
+              ],
+              "hint": "\"hilig\" is what you are into — your interest or hobby."
+            }
+          ]
+        },
+        {
+          "id": "hobbies-2",
+          "title": "Music and dancing",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "hobbies-2-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "kumakanta",
+                  "right": "singing"
+                },
+                {
+                  "left": "sumasayaw",
+                  "right": "dancing"
+                },
+                {
+                  "left": "kanta",
+                  "right": "song"
+                },
+                {
+                  "left": "musika",
+                  "right": "music"
+                }
+              ]
+            },
+            {
+              "id": "hobbies-2-ex2",
+              "type": "choice",
+              "prompt": "'Kumakanta' means...",
+              "answer": "Singing (sings)",
+              "distractors": [
+                "Dancing",
+                "Playing",
+                "Watching"
+              ],
+              "audio": "kumakanta"
+            },
+            {
+              "id": "hobbies-2-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Kumakanta siya sa videoke.",
+              "answer": "She is singing at the videoke.",
+              "accept": [
+                "He is singing at the videoke"
+              ],
+              "wordBank": [
+                "dancing",
+                "singing",
+                "playing",
+                "She",
+                "the",
+                "videoke",
+                "at",
+                "is",
+                "music"
+              ]
+            },
+            {
+              "id": "hobbies-2-ex4",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "They are dancing.",
+              "answer": "Sumasayaw sila.",
+              "wordBank": [
+                "ako",
+                "sila",
+                "musika",
+                "kumakanta",
+                "Sumasayaw"
+              ]
+            },
+            {
+              "id": "hobbies-2-ex5",
+              "type": "fill_blank",
+              "sentence": "___ ako ng kanta.",
+              "translation": "I am singing a song.",
+              "answer": "Kumakanta",
+              "options": [
+                "Kumakanta",
+                "Sumasayaw",
+                "Naglalaro"
+              ]
+            },
+            {
+              "id": "hobbies-2-ex6",
+              "type": "choice",
+              "prompt": "'Gitara' means...",
+              "answer": "Guitar",
+              "distractors": [
+                "Song",
+                "Music",
+                "Movie"
+              ],
+              "audio": "gitara"
+            },
+            {
+              "id": "hobbies-2-ex7",
+              "type": "listen",
+              "audio": "kumakanta_siya",
+              "answer": "Kumakanta siya",
+              "wordBank": [
+                "kanta",
+                "sumasayaw",
+                "siya",
+                "Kumakanta"
+              ]
+            },
+            {
+              "id": "hobbies-2-ex8",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Sumasayaw at kumakanta kami.",
+              "answer": "We are dancing and singing.",
+              "accept": [
+                "We dance and sing",
+                "We are singing and dancing"
+              ],
+              "wordBank": [
+                "and",
+                "are",
+                "watching",
+                "dancing",
+                "they",
+                "We",
+                "singing",
+                "playing"
+              ]
+            },
+            {
+              "id": "hobbies-2-ex9",
+              "type": "choice",
+              "prompt": "Filipinos love to sing at a...",
+              "answer": "Videoke",
+              "distractors": [
+                "Basketbol",
+                "Palengke",
+                "Ospital"
+              ],
+              "audio": "videoke"
+            }
+          ]
+        },
+        {
+          "id": "hobbies-3",
+          "title": "Gusto kong...",
+          "xp": 10,
+          "exercises": [
+            {
+              "id": "hobbies-3-ex1",
+              "type": "choice",
+              "prompt": "'Gusto kong kumanta' means...",
+              "answer": "I want to sing",
+              "distractors": [
+                "I am singing",
+                "I sang",
+                "Do you want to sing?"
+              ],
+              "audio": "gusto_kong_kumanta"
+            },
+            {
+              "id": "hobbies-3-ex2",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Gusto kong maglaro ng basketbol.",
+              "answer": "I want to play basketball.",
+              "accept": [
+                "I like to play basketball"
+              ],
+              "wordBank": [
+                "read",
+                "want",
+                "watch",
+                "basketball",
+                "sing",
+                "I",
+                "play",
+                "to"
+              ]
+            },
+            {
+              "id": "hobbies-3-ex3",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "I like to sing.",
+              "answer": "Gusto kong kumanta.",
+              "wordBank": [
+                "sumayaw",
+                "kong",
+                "siya",
+                "Gusto",
+                "maglaro",
+                "kumanta"
+              ],
+              "hint": "\"gusto ko\" + a verb takes the -ng linker → \"gusto kong\"."
+            },
+            {
+              "id": "hobbies-3-ex4",
+              "type": "fill_blank",
+              "sentence": "Gusto ___ sumayaw.",
+              "translation": "I want to dance.",
+              "answer": "kong",
+              "options": [
+                "kong",
+                "ko",
+                "ang"
+              ],
+              "hint": "Before a verb, \"gusto ko\" becomes \"gusto kong\"."
+            },
+            {
+              "id": "hobbies-3-ex5",
+              "type": "choice",
+              "prompt": "'Manood' means...",
+              "answer": "To watch",
+              "distractors": [
+                "To play",
+                "To sing",
+                "To read"
+              ],
+              "audio": "manood"
+            },
+            {
+              "id": "hobbies-3-ex6",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Gusto niyang manood ng pelikula.",
+              "answer": "She wants to watch a movie.",
+              "accept": [
+                "He wants to watch a movie",
+                "She likes to watch a movie",
+                "He likes to watch a movie"
+              ],
+              "wordBank": [
+                "movie",
+                "She",
+                "watch",
+                "wants",
+                "to",
+                "a",
+                "sing",
+                "read",
+                "game"
+              ]
+            },
+            {
+              "id": "hobbies-3-ex7",
+              "type": "listen",
+              "audio": "gusto_kong_magbasa",
+              "answer": "Gusto kong magbasa",
+              "wordBank": [
+                "kumanta",
+                "magbasa",
+                "Gusto",
+                "kong",
+                "sumayaw"
+              ]
+            },
+            {
+              "id": "hobbies-3-ex8",
+              "type": "fill_blank",
+              "sentence": "Gusto ___ maglaro.",
+              "translation": "They want to play.",
+              "answer": "nilang",
+              "options": [
+                "nilang",
+                "nila",
+                "mong"
+              ],
+              "hint": "\"gusto nila\" + a verb → \"gusto nilang\"."
+            },
+            {
+              "id": "hobbies-3-ex9",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "We want to watch a movie.",
+              "answer": "Gusto naming manood ng pelikula.",
+              "wordBank": [
+                "ako",
+                "ng",
+                "naming",
+                "kumanta",
+                "pelikula",
+                "manood",
+                "magbasa",
+                "Gusto"
+              ],
+              "hint": "\"gusto namin\" + a verb → \"gusto naming\"."
+            }
+          ]
+        },
+        {
+          "id": "hobbies-4",
+          "title": "My free time",
+          "xp": 15,
+          "exercises": [
+            {
+              "id": "hobbies-4-ex1",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "manood",
+                  "right": "to watch"
+                },
+                {
+                  "left": "magbasa",
+                  "right": "to read"
+                },
+                {
+                  "left": "kumanta",
+                  "right": "to sing"
+                },
+                {
+                  "left": "sumayaw",
+                  "right": "to dance"
+                }
+              ]
+            },
+            {
+              "id": "hobbies-4-ex2",
+              "type": "choice",
+              "prompt": "'Paborito' means...",
+              "answer": "Favorite",
+              "distractors": [
+                "Hobby",
+                "Sport",
+                "Game"
+              ],
+              "audio": "paborito"
+            },
+            {
+              "id": "hobbies-4-ex3",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Ano ang paborito mong libangan?",
+              "answer": "What is your favorite hobby?",
+              "wordBank": [
+                "What",
+                "your",
+                "movie",
+                "sport",
+                "is",
+                "hobby",
+                "favorite",
+                "song"
+              ]
+            },
+            {
+              "id": "hobbies-4-ex4",
+              "type": "translate_taps",
+              "direction": "base_to_target",
+              "prompt": "Basketball is my favorite hobby.",
+              "answer": "Basketbol ang paborito kong libangan.",
+              "wordBank": [
+                "paborito",
+                "gusto",
+                "pelikula",
+                "libangan",
+                "kong",
+                "kanta",
+                "ang",
+                "Basketbol"
+              ]
+            },
+            {
+              "id": "hobbies-4-ex5",
+              "type": "fill_blank",
+              "sentence": "Gusto kong ___ ng libro.",
+              "translation": "I like to read a book.",
+              "answer": "magbasa",
+              "options": [
+                "magbasa",
+                "manood",
+                "maglaro"
+              ]
+            },
+            {
+              "id": "hobbies-4-ex6",
+              "type": "listen",
+              "audio": "gusto_niyang_sumayaw",
+              "answer": "Gusto niyang sumayaw",
+              "wordBank": [
+                "kumanta",
+                "maglaro",
+                "Gusto",
+                "niyang",
+                "sumayaw"
+              ]
+            },
+            {
+              "id": "hobbies-4-ex7",
+              "type": "translate_taps",
+              "direction": "target_to_base",
+              "prompt": "Nanonood kami ng pelikula sa bahay.",
+              "answer": "We are watching a movie at home.",
+              "accept": [
+                "We watch a movie at home"
+              ],
+              "wordBank": [
+                "home",
+                "playing",
+                "We",
+                "a",
+                "are",
+                "movie",
+                "watching",
+                "at",
+                "singing",
+                "school"
+              ]
+            },
+            {
+              "id": "hobbies-4-ex8",
+              "type": "choice",
+              "prompt": "You want to invite a friend to sing. Say:",
+              "answer": "Gusto mo bang kumanta?",
+              "distractors": [
+                "Kumanta ka na",
+                "Ayaw kong kumanta",
+                "Sumasayaw siya"
+              ],
+              "audio": "gusto_mo_bang_kumanta"
+            },
+            {
+              "id": "hobbies-4-ex9",
+              "type": "match_pairs",
+              "pairs": [
+                {
+                  "left": "naglalaro",
+                  "right": "playing"
+                },
+                {
+                  "left": "kumakanta",
+                  "right": "singing"
+                },
+                {
+                  "left": "sumasayaw",
+                  "right": "dancing"
+                },
+                {
+                  "left": "nanonood",
+                  "right": "watching"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "vocab": {
@@ -9386,19 +11083,376 @@
       "translation": "congratulations / I congratulate you",
       "audio": "binabati_kita",
       "notes": "From \"bati\" (greeting) — used for weddings, graduations and good news."
+    },
+    "kulay": {
+      "id": "kulay",
+      "lemma": "kulay",
+      "translation": "color",
+      "audio": "kulay",
+      "notes": "\"Anong kulay?\" = What color?"
+    },
+    "pula": {
+      "id": "pula",
+      "lemma": "pula",
+      "translation": "red",
+      "audio": "pula"
+    },
+    "puti": {
+      "id": "puti",
+      "lemma": "puti",
+      "translation": "white",
+      "audio": "puti"
+    },
+    "itim": {
+      "id": "itim",
+      "lemma": "itim",
+      "translation": "black",
+      "audio": "itim"
+    },
+    "asul": {
+      "id": "asul",
+      "lemma": "asul",
+      "translation": "blue",
+      "audio": "asul",
+      "notes": "From Spanish \"azul\"."
+    },
+    "dilaw": {
+      "id": "dilaw",
+      "lemma": "dilaw",
+      "translation": "yellow",
+      "audio": "dilaw"
+    },
+    "berde": {
+      "id": "berde",
+      "lemma": "berde",
+      "translation": "green",
+      "audio": "berde",
+      "notes": "From Spanish \"verde\"; the native word \"luntian\" is more formal."
+    },
+    "kahel": {
+      "id": "kahel",
+      "lemma": "kahel",
+      "translation": "orange",
+      "audio": "kahel",
+      "notes": "Also the orange fruit."
+    },
+    "rosas": {
+      "id": "rosas",
+      "lemma": "rosas",
+      "translation": "pink",
+      "audio": "rosas",
+      "notes": "Also means rose, the flower."
+    },
+    "damit": {
+      "id": "damit",
+      "lemma": "damit",
+      "translation": "clothes / clothing",
+      "audio": "damit",
+      "notes": "The general word for clothes; also a single garment."
+    },
+    "sapatos": {
+      "id": "sapatos",
+      "lemma": "sapatos",
+      "translation": "shoes",
+      "audio": "sapatos"
+    },
+    "sombrero": {
+      "id": "sombrero",
+      "lemma": "sombrero",
+      "translation": "hat",
+      "audio": "sombrero"
+    },
+    "medyas": {
+      "id": "medyas",
+      "lemma": "medyas",
+      "translation": "socks",
+      "audio": "medyas",
+      "notes": "From Spanish \"medias\"."
+    },
+    "pantalon": {
+      "id": "pantalon",
+      "lemma": "pantalon",
+      "translation": "pants / trousers",
+      "audio": "pantalon",
+      "notes": "From Spanish \"pantalón\"."
+    },
+    "palda": {
+      "id": "palda",
+      "lemma": "palda",
+      "translation": "skirt",
+      "audio": "palda",
+      "notes": "From Spanish \"falda\"."
+    },
+    "bestida": {
+      "id": "bestida",
+      "lemma": "bestida",
+      "translation": "dress",
+      "audio": "bestida",
+      "notes": "From Spanish \"vestido\"."
+    },
+    "kamiseta": {
+      "id": "kamiseta",
+      "lemma": "kamiseta",
+      "translation": "shirt / T-shirt",
+      "audio": "kamiseta",
+      "notes": "The everyday word for a shirt or T-shirt."
+    },
+    "suot": {
+      "id": "suot",
+      "lemma": "suot",
+      "translation": "worn / to wear",
+      "audio": "suot",
+      "notes": "\"Ano ang suot mo?\" = What are you wearing?"
+    },
+    "nakasuot": {
+      "id": "nakasuot",
+      "lemma": "nakasuot",
+      "translation": "wearing",
+      "audio": "nakasuot",
+      "notes": "naka- means \"in the state of\". \"Nakasuot siya ng pulang damit.\" = She is wearing a red dress."
+    },
+    "hayop": {
+      "id": "hayop",
+      "lemma": "hayop",
+      "translation": "animal",
+      "audio": "hayop"
+    },
+    "aso": {
+      "id": "aso",
+      "lemma": "aso",
+      "translation": "dog",
+      "audio": "aso"
+    },
+    "pusa": {
+      "id": "pusa",
+      "lemma": "pusa",
+      "translation": "cat",
+      "audio": "pusa"
+    },
+    "ibon": {
+      "id": "ibon",
+      "lemma": "ibon",
+      "translation": "bird",
+      "audio": "ibon"
+    },
+    "kalabaw": {
+      "id": "kalabaw",
+      "lemma": "kalabaw",
+      "translation": "carabao / water buffalo",
+      "audio": "kalabaw",
+      "notes": "The national animal — the strong, patient work animal of the rice fields."
+    },
+    "kabayo": {
+      "id": "kabayo",
+      "lemma": "kabayo",
+      "translation": "horse",
+      "audio": "kabayo"
+    },
+    "baka": {
+      "id": "baka",
+      "lemma": "baka",
+      "translation": "cow",
+      "audio": "baka"
+    },
+    "baboy": {
+      "id": "baboy",
+      "lemma": "baboy",
+      "translation": "pig",
+      "audio": "baboy",
+      "notes": "Also the meat, pork — many rural families raise one in the backyard."
+    },
+    "kambing": {
+      "id": "kambing",
+      "lemma": "kambing",
+      "translation": "goat",
+      "audio": "kambing"
+    },
+    "daga": {
+      "id": "daga",
+      "lemma": "daga",
+      "translation": "rat / mouse",
+      "audio": "daga",
+      "notes": "One word for both; do not confuse with \"dagat\" (sea)."
+    },
+    "alaga": {
+      "id": "alaga",
+      "lemma": "alaga",
+      "translation": "pet / someone cared for",
+      "audio": "alaga",
+      "notes": "Anyone or anything you look after; takes a linker: \"alagang aso\" = pet dog."
+    },
+    "mabagal": {
+      "id": "mabagal",
+      "lemma": "mabagal",
+      "translation": "slow",
+      "audio": "mabagal",
+      "notes": "The opposite of \"mabilis\" (fast)."
+    },
+    "buntot": {
+      "id": "buntot",
+      "lemma": "buntot",
+      "translation": "tail",
+      "audio": "buntot"
+    },
+    "pakpak": {
+      "id": "pakpak",
+      "lemma": "pakpak",
+      "translation": "wing / wings",
+      "audio": "pakpak"
+    },
+    "tumatahol": {
+      "id": "tumatahol",
+      "lemma": "tumatahol",
+      "translation": "barking / barks",
+      "audio": "tumatahol",
+      "notes": "What a dog does; from \"tahol\" (a bark)."
+    },
+    "lumilipad": {
+      "id": "lumilipad",
+      "lemma": "lumilipad",
+      "translation": "flying / flies",
+      "audio": "lumilipad",
+      "notes": "Present/habitual of \"lumipad\" (flew). Actor focus."
+    },
+    "libangan": {
+      "id": "libangan",
+      "lemma": "libangan",
+      "translation": "hobby / pastime",
+      "audio": "libangan",
+      "notes": "From \"libang\" (to amuse oneself). \"Ano ang libangan mo?\" = What's your hobby?"
+    },
+    "hilig": {
+      "id": "hilig",
+      "lemma": "hilig",
+      "translation": "interest / hobby",
+      "audio": "hilig",
+      "notes": "What you are into. \"Ano ang hilig mo?\" = What are you into?"
+    },
+    "laro": {
+      "id": "laro",
+      "lemma": "laro",
+      "translation": "game",
+      "audio": "laro"
+    },
+    "maglaro": {
+      "id": "maglaro",
+      "lemma": "maglaro",
+      "translation": "to play",
+      "audio": "maglaro",
+      "notes": "The infinitive; \"naglalaro\" is the present (playing now)."
+    },
+    "naglalaro": {
+      "id": "naglalaro",
+      "lemma": "naglalaro",
+      "translation": "playing / plays",
+      "audio": "naglalaro"
+    },
+    "basketbol": {
+      "id": "basketbol",
+      "lemma": "basketbol",
+      "translation": "basketball",
+      "audio": "basketbol",
+      "notes": "The Philippines' most popular sport — a court stands in nearly every barangay."
+    },
+    "kumanta": {
+      "id": "kumanta",
+      "lemma": "kumanta",
+      "translation": "to sing / sang",
+      "audio": "kumanta",
+      "notes": "In -um- verbs the infinitive and past look alike; \"kumakanta\" = singing now."
+    },
+    "kumakanta": {
+      "id": "kumakanta",
+      "lemma": "kumakanta",
+      "translation": "singing / sings",
+      "audio": "kumakanta"
+    },
+    "kanta": {
+      "id": "kanta",
+      "lemma": "kanta",
+      "translation": "song",
+      "audio": "kanta"
+    },
+    "sumayaw": {
+      "id": "sumayaw",
+      "lemma": "sumayaw",
+      "translation": "to dance / danced",
+      "audio": "sumayaw",
+      "notes": "A -um- verb; \"sumasayaw\" = dancing now."
+    },
+    "sumasayaw": {
+      "id": "sumasayaw",
+      "lemma": "sumasayaw",
+      "translation": "dancing / dances",
+      "audio": "sumasayaw"
+    },
+    "manood": {
+      "id": "manood",
+      "lemma": "manood",
+      "translation": "to watch",
+      "audio": "manood",
+      "notes": "The infinitive; \"nanonood\" = watching now."
+    },
+    "nanonood": {
+      "id": "nanonood",
+      "lemma": "nanonood",
+      "translation": "watching / watches",
+      "audio": "nanonood"
+    },
+    "magbasa": {
+      "id": "magbasa",
+      "lemma": "magbasa",
+      "translation": "to read",
+      "audio": "magbasa",
+      "notes": "The infinitive of \"nagbabasa\" (reading)."
+    },
+    "musika": {
+      "id": "musika",
+      "lemma": "musika",
+      "translation": "music",
+      "audio": "musika"
+    },
+    "videoke": {
+      "id": "videoke",
+      "lemma": "videoke",
+      "translation": "videoke / karaoke",
+      "audio": "videoke",
+      "notes": "Karaoke with a scoring machine — a fixture at nearly every Filipino party."
+    },
+    "pelikula": {
+      "id": "pelikula",
+      "lemma": "pelikula",
+      "translation": "movie / film",
+      "audio": "pelikula"
+    },
+    "gitara": {
+      "id": "gitara",
+      "lemma": "gitara",
+      "translation": "guitar",
+      "audio": "gitara"
+    },
+    "paborito": {
+      "id": "paborito",
+      "lemma": "paborito",
+      "translation": "favorite",
+      "audio": "paborito",
+      "notes": "From Spanish \"favorito\". Takes -ng before a noun — \"paborito kong laro\"."
     }
   },
   "audio": {
     "agham": "audio/agham.mp3",
     "ako": "audio/ako.mp3",
     "ako_si_ana": "audio/ako_si_ana.mp3",
+    "alaga": "audio/alaga.mp3",
     "anak": "audio/anak.mp3",
     "ang_mahal_naman": "audio/ang_mahal_naman.mp3",
     "ang_mura_naman": "audio/ang_mura_naman.mp3",
     "anim": "audio/anim.mp3",
     "ano_ang_pangalan_mo": "audio/ano_ang_pangalan_mo.mp3",
+    "ano_ang_suot_mo": "audio/ano_ang_suot_mo.mp3",
     "ano_ang_trabaho_mo": "audio/ano_ang_trabaho_mo.mp3",
     "ano_ang_trabaho_ng_tatay_mo": "audio/ano_ang_trabaho_ng_tatay_mo.mp3",
+    "anong_kulay_ito": "audio/anong_kulay_ito.mp3",
     "aparador": "audio/aparador.mp3",
     "apat": "audio/apat.mp3",
     "apo": "audio/apo.mp3",
@@ -9407,6 +11461,9 @@
     "araw_araw": "audio/araw_araw.mp3",
     "araw_araw_umiinom_ako_ng_kape": "audio/araw_araw_umiinom_ako_ng_kape.mp3",
     "asawa": "audio/asawa.mp3",
+    "aso": "audio/aso.mp3",
+    "asul": "audio/asul.mp3",
+    "asul_na_medyas": "audio/asul_na_medyas.mp3",
     "ate": "audio/ate.mp3",
     "ayaw": "audio/ayaw.mp3",
     "ayaw_ko_ng_gatas": "audio/ayaw_ko_ng_gatas.mp3",
@@ -9414,13 +11471,18 @@
     "ayos_lang_ako": "audio/ayos_lang_ako.mp3",
     "ba": "audio/ba.mp3",
     "babae": "audio/babae.mp3",
+    "baboy": "audio/baboy.mp3",
     "bagong_taon": "audio/bagong_taon.mp3",
     "bagyo": "audio/bagyo.mp3",
     "bahay": "audio/bahay.mp3",
+    "baka": "audio/baka.mp3",
     "bakit": "audio/bakit.mp3",
     "bakit_ka_malungkot": "audio/bakit_ka_malungkot.mp3",
     "banyo": "audio/banyo.mp3",
+    "basketbol": "audio/basketbol.mp3",
     "basura": "audio/basura.mp3",
+    "berde": "audio/berde.mp3",
+    "bestida": "audio/bestida.mp3",
     "bibig": "audio/bibig.mp3",
     "binabati_kita": "audio/binabati_kita.mp3",
     "bintana": "audio/bintana.mp3",
@@ -9434,10 +11496,15 @@
     "bumili_ako_ng_tinapay": "audio/bumili_ako_ng_tinapay.mp3",
     "bundok": "audio/bundok.mp3",
     "bunso": "audio/bunso.mp3",
+    "buntot": "audio/buntot.mp3",
     "daan": "audio/daan.mp3",
+    "daga": "audio/daga.mp3",
     "dagat": "audio/dagat.mp3",
     "dahil": "audio/dahil.mp3",
     "dalawa": "audio/dalawa.mp3",
+    "damit": "audio/damit.mp3",
+    "dilaw": "audio/dilaw.mp3",
+    "dilaw_na_bestida": "audio/dilaw_na_bestida.mp3",
     "diretso": "audio/diretso.mp3",
     "dito": "audio/dito.mp3",
     "doktor": "audio/doktor.mp3",
@@ -9449,10 +11516,15 @@
     "galit": "audio/galit.mp3",
     "gamot": "audio/gamot.mp3",
     "gatas": "audio/gatas.mp3",
+    "gitara": "audio/gitara.mp3",
     "guro": "audio/guro.mp3",
     "guro_ako": "audio/guro_ako.mp3",
     "gusto": "audio/gusto.mp3",
     "gusto_ko_ng_kape": "audio/gusto_ko_ng_kape.mp3",
+    "gusto_kong_kumanta": "audio/gusto_kong_kumanta.mp3",
+    "gusto_kong_magbasa": "audio/gusto_kong_magbasa.mp3",
+    "gusto_mo_bang_kumanta": "audio/gusto_mo_bang_kumanta.mp3",
+    "gusto_niyang_sumayaw": "audio/gusto_niyang_sumayaw.mp3",
     "gutom": "audio/gutom.mp3",
     "gutom_na_ako": "audio/gutom_na_ako.mp3",
     "halika": "audio/halika.mp3",
@@ -9462,8 +11534,11 @@
     "hangin": "audio/hangin.mp3",
     "hapon": "audio/hapon.mp3",
     "hardin": "audio/hardin.mp3",
+    "hayop": "audio/hayop.mp3",
+    "hilig": "audio/hilig.mp3",
     "hindi": "audio/hindi.mp3",
     "ibabaw": "audio/ibabaw.mp3",
+    "ibon": "audio/ibon.mp3",
     "ikaw": "audio/ikaw.mp3",
     "ilabas_mo_ang_basura": "audio/ilabas_mo_ang_basura.mp3",
     "ilan": "audio/ilan.mp3",
@@ -9475,21 +11550,29 @@
     "isa": "audio/isa.mp3",
     "isda": "audio/isda.mp3",
     "istasyon": "audio/istasyon.mp3",
+    "itim": "audio/itim.mp3",
+    "itim_na_pantalon": "audio/itim_na_pantalon.mp3",
     "itlog": "audio/itlog.mp3",
     "ito": "audio/ito.mp3",
     "ito_ang_kamay_ko": "audio/ito_ang_kamay_ko.mp3",
     "ito_ang_pamilya_ko": "audio/ito_ang_pamilya_ko.mp3",
     "jeepney": "audio/jeepney.mp3",
     "kaarawan": "audio/kaarawan.mp3",
+    "kabayo": "audio/kabayo.mp3",
     "kahapon": "audio/kahapon.mp3",
+    "kahel": "audio/kahel.mp3",
     "kaibigan": "audio/kaibigan.mp3",
     "kain_tayo": "audio/kain_tayo.mp3",
+    "kalabaw": "audio/kalabaw.mp3",
     "kaliwa": "audio/kaliwa.mp3",
     "kama": "audio/kama.mp3",
     "kamay": "audio/kamay.mp3",
+    "kambing": "audio/kambing.mp3",
     "kami": "audio/kami.mp3",
+    "kamiseta": "audio/kamiseta.mp3",
     "kanan": "audio/kanan.mp3",
     "kanin": "audio/kanin.mp3",
+    "kanta": "audio/kanta.mp3",
     "kanto": "audio/kanto.mp3",
     "kapatid": "audio/kapatid.mp3",
     "kape": "audio/kape.mp3",
@@ -9497,10 +11580,14 @@
     "kasi": "audio/kasi.mp3",
     "katawan": "audio/katawan.mp3",
     "klase": "audio/klase.mp3",
+    "kulay": "audio/kulay.mp3",
     "kumain": "audio/kumain.mp3",
     "kumain_ako_ng_kanin": "audio/kumain_ako_ng_kanin.mp3",
     "kumakain": "audio/kumakain.mp3",
     "kumakain_ako_ng_kanin": "audio/kumakain_ako_ng_kanin.mp3",
+    "kumakanta": "audio/kumakanta.mp3",
+    "kumakanta_siya": "audio/kumakanta_siya.mp3",
+    "kumanta": "audio/kumanta.mp3",
     "kumusta": "audio/kumusta.mp3",
     "kumusta_ang_pakiramdam_mo": "audio/kumusta_ang_pakiramdam_mo.mp3",
     "kumusta_ka": "audio/kumusta_ka.mp3",
@@ -9510,6 +11597,8 @@
     "lagnat": "audio/lagnat.mp3",
     "lalaki": "audio/lalaki.mp3",
     "langit": "audio/langit.mp3",
+    "laro": "audio/laro.mp3",
+    "libangan": "audio/libangan.mp3",
     "libro": "audio/libro.mp3",
     "likod": "audio/likod.mp3",
     "lima": "audio/lima.mp3",
@@ -9518,7 +11607,12 @@
     "loob": "audio/loob.mp3",
     "lumiko": "audio/lumiko.mp3",
     "lumiko_ka_sa_kanan": "audio/lumiko_ka_sa_kanan.mp3",
+    "lumilipad": "audio/lumilipad.mp3",
+    "lumilipad_ang_ibon": "audio/lumilipad_ang_ibon.mp3",
+    "mabagal": "audio/mabagal.mp3",
+    "mabagal_ang_kalabaw": "audio/mabagal_ang_kalabaw.mp3",
     "mabilis": "audio/mabilis.mp3",
+    "mabilis_ang_aso": "audio/mabilis_ang_aso.mp3",
     "mabuti": "audio/mabuti.mp3",
     "mabuti_ako": "audio/mabuti_ako.mp3",
     "madali_ang_pagsusulit": "audio/madali_ang_pagsusulit.mp3",
@@ -9528,8 +11622,10 @@
     "magandang_hapon": "audio/magandang_hapon.mp3",
     "magandang_umaga": "audio/magandang_umaga.mp3",
     "magandang_umaga_po_lola": "audio/magandang_umaga_po_lola.mp3",
+    "magbasa": "audio/magbasa.mp3",
     "magkano": "audio/magkano.mp3",
     "magkano_ito": "audio/magkano_ito.mp3",
+    "maglaro": "audio/maglaro.mp3",
     "magsasaka": "audio/magsasaka.mp3",
     "magulang": "audio/magulang.mp3",
     "mahal": "audio/mahal.mp3",
@@ -9548,6 +11644,7 @@
     "malungkot": "audio/malungkot.mp3",
     "manigong_bagong_taon": "audio/manigong_bagong_taon.mp3",
     "manok": "audio/manok.mp3",
+    "manood": "audio/manood.mp3",
     "marami": "audio/marami.mp3",
     "maraming_puno": "audio/maraming_puno.mp3",
     "masakit": "audio/masakit.mp3",
@@ -9563,6 +11660,7 @@
     "mataas_ang_sahod_ko": "audio/mataas_ang_sahod_ko.mp3",
     "matematika": "audio/matematika.mp3",
     "may": "audio/may.mp3",
+    "may_alagang_pusa_ako": "audio/may_alagang_pusa_ako.mp3",
     "may_anak_sila": "audio/may_anak_sila.mp3",
     "may_bagyo_bukas": "audio/may_bagyo_bukas.mp3",
     "may_kapatid_ako": "audio/may_kapatid_ako.mp3",
@@ -9570,9 +11668,11 @@
     "may_lagnat_ang_anak_ko": "audio/may_lagnat_ang_anak_ko.mp3",
     "may_pagsusulit_kami_bukas": "audio/may_pagsusulit_kami_bukas.mp3",
     "may_sakit_ako": "audio/may_sakit_ako.mp3",
+    "medyas": "audio/medyas.mp3",
     "medyo": "audio/medyo.mp3",
     "mesa": "audio/mesa.mp3",
     "mura": "audio/mura.mp3",
+    "musika": "audio/musika.mp3",
     "nag_aaral": "audio/nag_aaral.mp3",
     "nag_aaral_ako_ng_tagalog": "audio/nag_aaral_ako_ng_tagalog.mp3",
     "nagbabasa": "audio/nagbabasa.mp3",
@@ -9580,6 +11680,8 @@
     "naghuhugas": "audio/naghuhugas.mp3",
     "naghuhugas_ako_ng_plato": "audio/naghuhugas_ako_ng_plato.mp3",
     "naglalakad": "audio/naglalakad.mp3",
+    "naglalaro": "audio/naglalaro.mp3",
+    "naglalaro_sila_ng_basketbol": "audio/naglalaro_sila_ng_basketbol.mp3",
     "naglilinis": "audio/naglilinis.mp3",
     "naglilinis_ako_ng_kwarto": "audio/naglilinis_ako_ng_kwarto.mp3",
     "nagluluto": "audio/nagluluto.mp3",
@@ -9591,7 +11693,10 @@
     "nakakatawa": "audio/nakakatawa.mp3",
     "nakakatawa_ang_libro": "audio/nakakatawa_ang_libro.mp3",
     "nakakatawa_siya": "audio/nakakatawa_siya.mp3",
+    "nakasuot": "audio/nakasuot.mp3",
+    "nakasuot_siya_ng_pulang_damit": "audio/nakasuot_siya_ng_pulang_damit.mp3",
     "nanay": "audio/nanay.mp3",
+    "nanonood": "audio/nanonood.mp3",
     "nars": "audio/nars.mp3",
     "nasa_hardin_ang_mga_bulaklak": "audio/nasa_hardin_ang_mga_bulaklak.mp3",
     "nasa_ibabaw_ng_mesa_ang_libro": "audio/nasa_ibabaw_ng_mesa_ang_libro.mp3",
@@ -9609,6 +11714,7 @@
     "paa": "audio/paa.mp3",
     "paalam": "audio/paalam.mp3",
     "paaralan": "audio/paaralan.mp3",
+    "paborito": "audio/paborito.mp3",
     "pagdiriwang": "audio/pagdiriwang.mp3",
     "pagod": "audio/pagod.mp3",
     "pagod_ako": "audio/pagod_ako.mp3",
@@ -9616,12 +11722,16 @@
     "pagod_na_ako": "audio/pagod_na_ako.mp3",
     "pagsusulit": "audio/pagsusulit.mp3",
     "pakiramdam": "audio/pakiramdam.mp3",
+    "pakpak": "audio/pakpak.mp3",
+    "palda": "audio/palda.mp3",
     "palengke": "audio/palengke.mp3",
     "pamilya": "audio/pamilya.mp3",
     "panahon": "audio/panahon.mp3",
     "pangalan": "audio/pangalan.mp3",
+    "pantalon": "audio/pantalon.mp3",
     "parol": "audio/parol.mp3",
     "pasko": "audio/pasko.mp3",
+    "pelikula": "audio/pelikula.mp3",
     "pera": "audio/pera.mp3",
     "pinsan": "audio/pinsan.mp3",
     "pinto": "audio/pinto.mp3",
@@ -9629,14 +11739,20 @@
     "pista": "audio/pista.mp3",
     "pito": "audio/pito.mp3",
     "presyo": "audio/presyo.mp3",
+    "pula": "audio/pula.mp3",
+    "pulang_sapatos": "audio/pulang_sapatos.mp3",
     "pulis": "audio/pulis.mp3",
     "pumunta": "audio/pumunta.mp3",
     "pumunta_ako_sa_palengke": "audio/pumunta_ako_sa_palengke.mp3",
     "puno": "audio/puno.mp3",
     "pupunta": "audio/pupunta.mp3",
     "pupunta_ako_sa_doktor": "audio/pupunta_ako_sa_doktor.mp3",
+    "pusa": "audio/pusa.mp3",
+    "puti": "audio/puti.mp3",
     "ref": "audio/ref.mp3",
     "regalo": "audio/regalo.mp3",
+    "rosas": "audio/rosas.mp3",
+    "rosas_na_palda": "audio/rosas_na_palda.mp3",
     "sa_tingin_ko": "audio/sa_tingin_ko.mp3",
     "saan": "audio/saan.mp3",
     "saan_ang_palengke": "audio/saan_ang_palengke.mp3",
@@ -9648,6 +11764,7 @@
     "salamat": "audio/salamat.mp3",
     "salamat_sa_imbitasyon": "audio/salamat_sa_imbitasyon.mp3",
     "sampu": "audio/sampu.mp3",
+    "sapatos": "audio/sapatos.mp3",
     "sila": "audio/sila.mp3",
     "silya": "audio/silya.mp3",
     "simbahan": "audio/simbahan.mp3",
@@ -9657,9 +11774,13 @@
     "siya_ang_nanay_ko": "audio/siya_ang_nanay_ko.mp3",
     "siyam": "audio/siyam.mp3",
     "sobra": "audio/sobra.mp3",
+    "sombrero": "audio/sombrero.mp3",
     "sukli": "audio/sukli.mp3",
     "sumakay": "audio/sumakay.mp3",
     "sumakay_ako_ng_jeepney": "audio/sumakay_ako_ng_jeepney.mp3",
+    "sumasayaw": "audio/sumasayaw.mp3",
+    "sumayaw": "audio/sumayaw.mp3",
+    "suot": "audio/suot.mp3",
     "tainga": "audio/tainga.mp3",
     "takot": "audio/takot.mp3",
     "talaga": "audio/talaga.mp3",
@@ -9676,6 +11797,8 @@
     "trabaho": "audio/trabaho.mp3",
     "tubig": "audio/tubig.mp3",
     "tuloy_po_kayo": "audio/tuloy_po_kayo.mp3",
+    "tumatahol": "audio/tumatahol.mp3",
+    "tumatahol_ang_aso": "audio/tumatahol_ang_aso.mp3",
     "ubo": "audio/ubo.mp3",
     "uhaw": "audio/uhaw.mp3",
     "ulan": "audio/ulan.mp3",
@@ -9689,7 +11812,9 @@
     "umuulan": "audio/umuulan.mp3",
     "umuulan_ngayon": "audio/umuulan_ngayon.mp3",
     "unibersidad": "audio/unibersidad.mp3",
+    "videoke": "audio/videoke.mp3",
     "wala": "audio/wala.mp3",
+    "wala_akong_ibon": "audio/wala_akong_ibon.mp3",
     "wala_akong_kapatid": "audio/wala_akong_kapatid.mp3",
     "walang_anuman": "audio/walang_anuman.mp3",
     "walo": "audio/walo.mp3"
@@ -9698,13 +11823,16 @@
     "agham": "agham",
     "ako": "ako",
     "ako_si_ana": "Ako si Ana.",
+    "alaga": "Alaga.",
     "anak": "anak",
     "ang_mahal_naman": "Ang mahal naman!",
     "ang_mura_naman": "Ang mura naman!",
     "anim": "anim",
     "ano_ang_pangalan_mo": "Ano ang pangalan mo?",
+    "ano_ang_suot_mo": "Ano ang suot mo?",
     "ano_ang_trabaho_mo": "Ano ang trabaho mo?",
     "ano_ang_trabaho_ng_tatay_mo": "Ano ang trabaho ng tatay mo?",
+    "anong_kulay_ito": "Anong kulay ito?",
     "aparador": "aparador",
     "apat": "apat",
     "apo": "apo",
@@ -9713,6 +11841,9 @@
     "araw_araw": "araw-araw",
     "araw_araw_umiinom_ako_ng_kape": "Araw-araw umiinom ako ng kape.",
     "asawa": "asawa",
+    "aso": "Aso.",
+    "asul": "asul",
+    "asul_na_medyas": "Asul na medyas",
     "ate": "ate",
     "ayaw": "ayaw",
     "ayaw_ko_ng_gatas": "Ayaw ko ng gatas.",
@@ -9720,13 +11851,18 @@
     "ayos_lang_ako": "Ayos lang ako",
     "ba": "ba",
     "babae": "babae",
+    "baboy": "Baboy.",
     "bagong_taon": "Bagong Taon",
     "bagyo": "bagyo",
     "bahay": "Bahay",
+    "baka": "baka",
     "bakit": "bakit",
     "bakit_ka_malungkot": "Bakit ka malungkot?",
     "banyo": "banyo",
+    "basketbol": "basketbol",
     "basura": "basura",
+    "berde": "Berde",
+    "bestida": "bestida",
     "bibig": "bibig",
     "binabati_kita": "Binabati kita!",
     "bintana": "Bintana",
@@ -9740,10 +11876,15 @@
     "bumili_ako_ng_tinapay": "Bumili ako ng tinapay.",
     "bundok": "bundok",
     "bunso": "bunso",
+    "buntot": "buntot",
     "daan": "daan",
+    "daga": "daga",
     "dagat": "Dagat",
     "dahil": "dahil",
     "dalawa": "Dalawa",
+    "damit": "damit",
+    "dilaw": "Dilaw",
+    "dilaw_na_bestida": "Dilaw na bestida",
     "diretso": "diretso",
     "dito": "dito",
     "doktor": "doktor",
@@ -9755,10 +11896,15 @@
     "galit": "galit",
     "gamot": "gamot",
     "gatas": "gatas",
+    "gitara": "Gitara",
     "guro": "Guro",
     "guro_ako": "Guro ako.",
     "gusto": "gusto",
     "gusto_ko_ng_kape": "Gusto ko ng kape.",
+    "gusto_kong_kumanta": "Gusto kong kumanta.",
+    "gusto_kong_magbasa": "Gusto kong magbasa",
+    "gusto_mo_bang_kumanta": "Gusto mo bang kumanta?",
+    "gusto_niyang_sumayaw": "Gusto niyang sumayaw",
     "gutom": "gutom",
     "gutom_na_ako": "Gutom na ako.",
     "halika": "halika",
@@ -9768,8 +11914,11 @@
     "hangin": "hangin",
     "hapon": "hapon",
     "hardin": "hardin",
+    "hayop": "Hayop.",
+    "hilig": "hilig",
     "hindi": "hindi",
     "ibabaw": "ibabaw",
+    "ibon": "ibon",
     "ikaw": "ikaw",
     "ilabas_mo_ang_basura": "Ilabas mo ang basura.",
     "ilan": "ilan",
@@ -9781,21 +11930,29 @@
     "isa": "isa",
     "isda": "isda",
     "istasyon": "istasyon",
+    "itim": "itim",
+    "itim_na_pantalon": "Itim na pantalon",
     "itlog": "itlog",
     "ito": "ito",
     "ito_ang_kamay_ko": "Ito ang kamay ko.",
     "ito_ang_pamilya_ko": "Ito ang pamilya ko.",
     "jeepney": "jeepney",
     "kaarawan": "kaarawan",
+    "kabayo": "kabayo",
     "kahapon": "kahapon",
+    "kahel": "kahel",
     "kaibigan": "Kaibigan",
     "kain_tayo": "Kain tayo!",
+    "kalabaw": "Kalabaw.",
     "kaliwa": "kaliwa",
     "kama": "kama",
     "kamay": "kamay",
+    "kambing": "kambing",
     "kami": "kami",
+    "kamiseta": "kamiseta",
     "kanan": "kanan",
     "kanin": "kanin",
+    "kanta": "kanta",
     "kanto": "kanto",
     "kapatid": "Kapatid",
     "kape": "kape",
@@ -9803,10 +11960,14 @@
     "kasi": "kasi",
     "katawan": "katawan",
     "klase": "klase",
+    "kulay": "kulay",
     "kumain": "kumain",
     "kumain_ako_ng_kanin": "Kumain ako ng kanin.",
     "kumakain": "kumakain",
     "kumakain_ako_ng_kanin": "Kumakain ako ng kanin.",
+    "kumakanta": "Kumakanta",
+    "kumakanta_siya": "Kumakanta siya",
+    "kumanta": "kumanta",
     "kumusta": "kumusta",
     "kumusta_ang_pakiramdam_mo": "Kumusta ang pakiramdam mo?",
     "kumusta_ka": "Kumusta ka?",
@@ -9816,6 +11977,8 @@
     "lagnat": "lagnat",
     "lalaki": "lalaki",
     "langit": "langit",
+    "laro": "laro",
+    "libangan": "Libangan",
     "libro": "libro",
     "likod": "likod",
     "lima": "Lima",
@@ -9824,7 +11987,12 @@
     "loob": "loob",
     "lumiko": "lumiko",
     "lumiko_ka_sa_kanan": "Lumiko ka sa kanan.",
+    "lumilipad": "lumilipad",
+    "lumilipad_ang_ibon": "Lumilipad ang ibon.",
+    "mabagal": "mabagal",
+    "mabagal_ang_kalabaw": "Mabagal ang kalabaw",
     "mabilis": "mabilis",
+    "mabilis_ang_aso": "Mabilis ang aso.",
     "mabuti": "mabuti",
     "mabuti_ako": "Mabuti ako.",
     "madali_ang_pagsusulit": "Madali ang pagsusulit.",
@@ -9834,8 +12002,10 @@
     "magandang_hapon": "Magandang hapon!",
     "magandang_umaga": "Magandang umaga!",
     "magandang_umaga_po_lola": "Magandang umaga po, Lola.",
+    "magbasa": "magbasa",
     "magkano": "magkano",
     "magkano_ito": "Magkano ito?",
+    "maglaro": "Maglaro",
     "magsasaka": "Magsasaka",
     "magulang": "Magulang",
     "mahal": "mahal",
@@ -9854,6 +12024,7 @@
     "malungkot": "Malungkot",
     "manigong_bagong_taon": "Manigong Bagong Taon!",
     "manok": "manok",
+    "manood": "Manood",
     "marami": "marami",
     "maraming_puno": "Maraming puno.",
     "masakit": "masakit",
@@ -9869,6 +12040,7 @@
     "mataas_ang_sahod_ko": "Mataas ang sahod ko.",
     "matematika": "matematika",
     "may": "may",
+    "may_alagang_pusa_ako": "May alagang pusa ako",
     "may_anak_sila": "May anak sila",
     "may_bagyo_bukas": "May bagyo bukas.",
     "may_kapatid_ako": "May kapatid ako.",
@@ -9876,9 +12048,11 @@
     "may_lagnat_ang_anak_ko": "May lagnat ang anak ko.",
     "may_pagsusulit_kami_bukas": "May pagsusulit kami bukas",
     "may_sakit_ako": "May sakit ako.",
+    "medyas": "Medyas",
     "medyo": "medyo",
     "mesa": "Mesa",
     "mura": "Mura",
+    "musika": "musika",
     "nag_aaral": "nag-aaral",
     "nag_aaral_ako_ng_tagalog": "Nag-aaral ako ng Tagalog.",
     "nagbabasa": "nagbabasa",
@@ -9886,6 +12060,8 @@
     "naghuhugas": "naghuhugas",
     "naghuhugas_ako_ng_plato": "Naghuhugas ako ng plato.",
     "naglalakad": "naglalakad",
+    "naglalaro": "naglalaro",
+    "naglalaro_sila_ng_basketbol": "Naglalaro sila ng basketbol",
     "naglilinis": "naglilinis",
     "naglilinis_ako_ng_kwarto": "Naglilinis ako ng kwarto",
     "nagluluto": "Nagluluto",
@@ -9897,7 +12073,10 @@
     "nakakatawa": "nakakatawa",
     "nakakatawa_ang_libro": "Nakakatawa ang libro",
     "nakakatawa_siya": "Nakakatawa siya.",
+    "nakasuot": "Nakasuot",
+    "nakasuot_siya_ng_pulang_damit": "Nakasuot siya ng pulang damit.",
     "nanay": "nanay",
+    "nanonood": "nanonood",
     "nars": "Nars",
     "nasa_hardin_ang_mga_bulaklak": "Nasa hardin ang mga bulaklak.",
     "nasa_ibabaw_ng_mesa_ang_libro": "Nasa ibabaw ng mesa ang libro.",
@@ -9915,6 +12094,7 @@
     "paa": "paa",
     "paalam": "Paalam",
     "paaralan": "paaralan",
+    "paborito": "Paborito",
     "pagdiriwang": "pagdiriwang",
     "pagod": "pagod",
     "pagod_ako": "Pagod ako.",
@@ -9922,12 +12102,16 @@
     "pagod_na_ako": "Pagod na ako.",
     "pagsusulit": "pagsusulit",
     "pakiramdam": "pakiramdam",
+    "pakpak": "pakpak",
+    "palda": "palda",
     "palengke": "palengke",
     "pamilya": "pamilya",
     "panahon": "panahon",
     "pangalan": "pangalan",
+    "pantalon": "Pantalon",
     "parol": "parol",
     "pasko": "Pasko",
+    "pelikula": "pelikula",
     "pera": "pera",
     "pinsan": "pinsan",
     "pinto": "pinto",
@@ -9935,14 +12119,20 @@
     "pista": "Pista.",
     "pito": "Pito",
     "presyo": "presyo",
+    "pula": "Pula",
+    "pulang_sapatos": "Pulang sapatos",
     "pulis": "pulis",
     "pumunta": "pumunta",
     "pumunta_ako_sa_palengke": "Pumunta ako sa palengke.",
     "puno": "puno",
     "pupunta": "pupunta",
     "pupunta_ako_sa_doktor": "Pupunta ako sa doktor.",
+    "pusa": "Pusa.",
+    "puti": "Puti",
     "ref": "ref",
     "regalo": "regalo",
+    "rosas": "rosas",
+    "rosas_na_palda": "Rosas na palda",
     "sa_tingin_ko": "Sa tingin ko.",
     "saan": "saan",
     "saan_ang_palengke": "Saan ang palengke?",
@@ -9954,6 +12144,7 @@
     "salamat": "Salamat!",
     "salamat_sa_imbitasyon": "Salamat sa imbitasyon.",
     "sampu": "Sampu",
+    "sapatos": "Sapatos",
     "sila": "Sila",
     "silya": "silya",
     "simbahan": "simbahan",
@@ -9963,9 +12154,13 @@
     "siya_ang_nanay_ko": "Siya ang nanay ko.",
     "siyam": "siyam",
     "sobra": "sobra",
+    "sombrero": "sombrero",
     "sukli": "sukli",
     "sumakay": "sumakay",
     "sumakay_ako_ng_jeepney": "Sumakay ako ng jeepney.",
+    "sumasayaw": "sumasayaw",
+    "sumayaw": "sumayaw",
+    "suot": "suot",
     "tainga": "tainga",
     "takot": "takot",
     "talaga": "talaga",
@@ -9982,6 +12177,8 @@
     "trabaho": "trabaho",
     "tubig": "Tubig",
     "tuloy_po_kayo": "Tuloy po kayo.",
+    "tumatahol": "tumatahol",
+    "tumatahol_ang_aso": "Tumatahol ang aso",
     "ubo": "ubo",
     "uhaw": "uhaw",
     "ulan": "ulan",
@@ -9995,7 +12192,9 @@
     "umuulan": "umuulan",
     "umuulan_ngayon": "Umuulan ngayon.",
     "unibersidad": "unibersidad",
+    "videoke": "Videoke",
     "wala": "wala",
+    "wala_akong_ibon": "Wala akong ibon.",
     "wala_akong_kapatid": "Wala akong kapatid.",
     "walang_anuman": "Walang anuman.",
     "walo": "walo"
