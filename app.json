@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Aral Tagalog",
+    "slug": "mobiletagalog",
+    "version": "0.1.0",
+    "scheme": "aral",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.aral.mobiletagalog"
+    },
+    "android": {
+      "package": "app.aral.mobiletagalog"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-asset"
+    ],
+    "extra": {
+      "apiUrl": "http://localhost:3001"
+    }
+  }
+}
