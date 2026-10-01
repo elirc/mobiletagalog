@@ -61,3 +61,7 @@ src/
 - Content itself is authored in the monorepo (`packages/content`), which compiles the YAML into the
   bundle. To take new content, recompile there and copy `dist/course_en_tl.json` over
   `src/content/bundle.json`.
+
+## Source-based improvement course
+
+[Start the course](astraupskill/README.md). Trace session generations, acknowledged event batches, and baseline/outbox transaction boundaries.

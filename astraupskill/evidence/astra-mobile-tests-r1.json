@@ -1,0 +1,23 @@
+{
+  "project": "mobiletagalog",
+  "id": "1bf7dd59f47b",
+  "command": [
+    "node",
+    "C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js",
+    "run",
+    "test",
+    "--",
+    "--minWorkers=1",
+    "--testTimeout=30000"
+  ],
+  "cwd": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\1bf7dd59f47b",
+  "environmentOverrides": {},
+  "startedAt": "2026-09-19T22:54:32.661272+00:00",
+  "status": "complete",
+  "log": "astra-mobile-tests-r1.log",
+  "pid": 23040,
+  "exitCode": 0,
+  "passed": true,
+  "finishedAt": "2026-09-19T22:56:40.519184+00:00",
+  "elapsedSeconds": 127.85
+}

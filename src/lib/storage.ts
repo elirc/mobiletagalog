@@ -39,6 +39,18 @@ export function kvSet(key: string, value: unknown): void {
   }
 }
 
+/** Atomically adopt server progress and acknowledge only included events. */
+export function commitSyncedProgress(baseline: unknown, acknowledgedIds: string[]): void {
+  db.withTransactionSync(() => {
+    db.runSync(
+      "INSERT INTO kv (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value",
+      "baseline",
+      JSON.stringify(baseline),
+    );
+    for (const id of acknowledgedIds) db.runSync("DELETE FROM outbox WHERE id = ?", id);
+  });
+}
+
 export function outboxAdd(events: ProgressEvent[]): void {
   db.withTransactionSync(() => {
     for (const ev of events) {

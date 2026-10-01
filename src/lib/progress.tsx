@@ -4,20 +4,15 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
 import { AppState } from "react-native";
 import { reduceEvents, type ProgressEvent, type UserProgress } from "@/core";
-import { api, ApiError, type AuthTokens, type AuthUser } from "./api";
-import { kvGet, kvSet, outboxAdd, outboxAll, outboxClear, wipeAll } from "./storage";
-
-/**
- * Event-sourced progress, persisted in SQLite (OFF-02):
- * progress = server baseline (last /sync response) + unsynced outbox events.
- * Works fully logged-out — a guest simply has no baseline and never syncs.
- * The sync worker flushes the outbox when the app foregrounds or events land.
- */
+import { api, type AuthTokens, type AuthUser } from "./api";
+import { commitSyncedProgress, kvGet, kvSet, outboxAdd, outboxAll, wipeAll } from "./storage";
+import { authAdoptionMode, ProgressSyncCoordinator } from "./sync";
 
 export function deviceTz(): string {
   try {
@@ -43,11 +38,39 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const [outbox, setOutbox] = useState<ProgressEvent[]>(() => outboxAll());
   const [baseline, setBaseline] = useState<UserProgress | null>(() => kvGet<UserProgress>("baseline"));
   const [auth, setAuth] = useState<AuthTokens | null>(() => kvGet<AuthTokens>("auth"));
-  const [tick, setTick] = useState(0); // re-derive hearts as time passes
+  const [tick, setTick] = useState(0);
+  const syncCoordinator = useRef<ProgressSyncCoordinator | null>(null);
+  if (!syncCoordinator.current) {
+    syncCoordinator.current = new ProgressSyncCoordinator(
+      {
+        readOutbox: outboxAll,
+        push: async (tokens, events) => {
+          const response = await api.sync(tokens.accessToken, events);
+          return {
+            progress: response.progress,
+            // A successful /sync resolves every sent event: valid rows are
+            // inserted idempotently and rejected poison rows are reported.
+            acknowledgedIds: events.map((event) => event.id),
+          };
+        },
+        refresh: api.refresh,
+        commit: commitSyncedProgress,
+        onTokens: (tokens) => {
+          kvSet("auth", tokens);
+          setAuth(tokens);
+        },
+        onCommit: (progress, remaining) => {
+          setBaseline(progress);
+          setOutbox(remaining);
+        },
+      },
+      auth,
+    );
+  }
 
   useEffect(() => {
-    const t = setInterval(() => setTick((n) => n + 1), 30_000);
-    return () => clearInterval(t);
+    const timer = setInterval(() => setTick((value) => value + 1), 30_000);
+    return () => clearInterval(timer);
   }, []);
 
   const progress = useMemo(
@@ -60,80 +83,61 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setOutbox(outboxAll());
   }, []);
 
-  const syncWith = useCallback(async (tokens: AuthTokens, events: ProgressEvent[]) => {
-    // the server caps batches at 500; leftovers flush on the next debounce
-    const batch = events.slice(0, 500);
-    const push = async (t: AuthTokens) => {
-      const { progress: serverProgress } = await api.sync(t.accessToken, batch);
-      kvSet("baseline", serverProgress);
-      setBaseline(serverProgress);
-      outboxClear(batch.map((e) => e.id));
-      setOutbox(outboxAll());
-    };
-    try {
-      await push(tokens);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 401) {
-        const fresh = await api.refresh(tokens.refreshToken);
-        kvSet("auth", fresh);
-        setAuth(fresh);
-        await push(fresh);
-      } else {
-        throw err; // offline — outbox stays for the next attempt (OFF-02)
-      }
-    }
+  const syncNow = useCallback(async () => {
+    await syncCoordinator.current!.sync().catch(() => {});
   }, []);
 
-  const syncNow = useCallback(async () => {
-    if (!auth) return;
-    await syncWith(auth, outboxAll()).catch(() => {});
-  }, [auth, syncWith]);
-
-  const adoptAuth = useCallback(
-    async (tokens: AuthTokens) => {
-      kvSet("auth", tokens);
-      setAuth(tokens);
-      // push guest progress made before signup, then adopt server truth
-      await syncWith(tokens, outboxAll()).catch(() => {});
-    },
-    [syncWith],
-  );
+  const adoptAuth = useCallback(async (tokens: AuthTokens) => {
+    const mode = authAdoptionMode(
+      syncCoordinator.current!.currentSession()?.tokens.user.id ?? null,
+      tokens.user.id,
+    );
+    syncCoordinator.current!.setSession(tokens);
+    if (mode === "account-switch") {
+      wipeAll();
+      setBaseline(null);
+      setOutbox([]);
+    }
+    kvSet("auth", tokens);
+    setAuth(tokens);
+    await syncCoordinator.current!.sync().catch(() => {});
+  }, []);
 
   const logout = useCallback(() => {
+    syncCoordinator.current!.setSession(null);
     wipeAll();
     setAuth(null);
     setBaseline(null);
     setOutbox([]);
   }, []);
 
-  // sync worker: on new events (debounced) and when the app foregrounds
   useEffect(() => {
     if (!auth || outbox.length === 0) return;
-    const t = setTimeout(() => void syncNow(), 2000);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => void syncNow(), 2000);
+    return () => clearTimeout(timer);
   }, [auth, outbox, syncNow]);
 
   useEffect(() => {
-    const sub = AppState.addEventListener("change", (state) => {
+    const subscription = AppState.addEventListener("change", (state) => {
       if (state === "active") void syncNow();
     });
-    return () => sub.remove();
+    return () => subscription.remove();
   }, [syncNow]);
 
-  // keep the server-side tz current: the server buckets streak/xpByDay days
-  // with users.tz, clients with the device zone — they must agree (GAM-02)
   useEffect(() => {
     if (!auth) return;
     const tz = deviceTz();
-    if (auth.user.tz === tz) return;
+    const session = syncCoordinator.current!.currentSession();
+    if (!session || session.tokens.user.tz === tz) return;
     api
-      .updateMe(auth.accessToken, { tz })
+      .updateMe(session.tokens.accessToken, { tz })
       .then(({ user }) => {
-        const next = { ...auth, user };
+        const next = syncCoordinator.current!.applyUserUpdate(session, user);
+        if (!next) return;
         kvSet("auth", next);
         setAuth(next);
       })
-      .catch(() => {}); // best-effort; retried after the next token refresh
+      .catch(() => {});
   }, [auth]);
 
   const value = useMemo(
@@ -159,13 +163,11 @@ export function useProgress(): ProgressContextValue {
 }
 
 export function newEventId(): string {
-  // RN Hermes has crypto.randomUUID on new arch; fall back just in case.
-  // Must be a well-formed v4 UUID — /sync rejects anything else.
-  const c = globalThis.crypto as Crypto | undefined;
-  return c?.randomUUID
-    ? c.randomUUID()
-    : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (ch) => {
-        const r = (Math.random() * 16) | 0;
-        return (ch === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  const cryptoApi = globalThis.crypto as Crypto | undefined;
+  return cryptoApi?.randomUUID
+    ? cryptoApi.randomUUID()
+    : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (character) => {
+        const random = (Math.random() * 16) | 0;
+        return (character === "x" ? random : (random & 0x3) | 0x8).toString(16);
       });
 }
