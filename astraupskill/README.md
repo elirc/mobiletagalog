@@ -1,16 +1,32 @@
 # Mobiletagalog: synchronize without losing local progress
 
-The mobile app combines a server progress baseline with a local outbox. A learner may complete another activity while an earlier batch is being synchronized. A safe response handler must acknowledge only the sent events, preserve newly added events, and publish the resulting baseline and remainder together. It must also reject a response belonging to a session that has already ended.
+Mobiletagalog is an Expo 53 / React Native 0.79 Tagalog course app. Progress is a server baseline plus a local outbox of events in device SQLite. A learner may finish another lesson while an earlier batch is syncing, so a safe response handler must acknowledge only the sent events, keep newly added events, publish baseline and remainder together, and reject a response that belongs to a session that has already ended.
 
-This course follows those requirements through ProgressSyncCoordinator, device persistence, and ProgressProvider. The coordinator serializes sync requests and associates each with an authentication generation. Device storage commits the returned baseline and acknowledged identifiers in one synchronous transaction. The provider rereads remaining events after that commit, so a closure captured before the network request cannot discard later work.
+This course follows those requirements through `ProgressSyncCoordinator` ([src/lib/sync.ts](../src/lib/sync.ts)), device persistence ([src/lib/storage.ts](../src/lib/storage.ts)), and `ProgressProvider` ([src/lib/progress.tsx](../src/lib/progress.tsx)). It also covers authentication transitions: guest events survive first sign-in, a switch between two signed-in users clears the previous account's data, logout invalidates in-flight responses, and a late timezone update cannot restore old credentials.
 
-Begin with the map and concepts chapters, then trace the deferred-response examples. The tests use controlled promises for network interleavings and a mock SQLite adapter for transaction-contract assertions. They do not run an Expo device or certify native SQLite durability. The verification chapter retains that distinction alongside actual command results.
+## Reading order
 
-The change also handles authentication transitions. Guest events survive initial sign-in, but a direct switch between different signed-in users clears the previous account's progress. Logout invalidates in-flight responses. A delayed timezone profile update cannot restore old credentials or overwrite a refreshed access token. Each of these behaviors is part of keeping progress attached to the correct session.
+1. [01-CODEBASE-MAP](01-CODEBASE-MAP.md) — the four files, with line ranges, and two facts about the production adapter.
+2. [02-CONCEPTS](02-CONCEPTS.md) — generations vs user identity, and which half of the guard the tests actually exercise.
+3. [03-WORKED-CHANGE](03-WORKED-CHANGE.md) — one sync attempt, and what changed from the snapshots.
+4. [04-TESTING-AND-DEBUGGING](04-TESTING-AND-DEBUGGING.md) — the 10 tests, the commands, and eight mutations the suite does not catch.
+5. [05-PRACTICE](05-PRACTICE.md) — nine Goal + Check exercises; four have you write the missing tests. Predict before reading [06-SOLUTIONS-AND-REVIEW](06-SOLUTIONS-AND-REVIEW.md), which also lists five verified findings.
+6. [07-TRACE-LAB](07-TRACE-LAB.md) — draw the A/B/logout timelines.
+7. [VERIFICATION](VERIFICATION.md) — what ran, when, and what did not.
+
+## Running the tests
+
+```text
+npm install
+npm test               # vitest run --pool=forks --maxWorkers=1  (10 tests)
+npm run typecheck
+```
+
+The tests use controlled promises for network interleavings and a mocked `expo-sqlite` for the transaction contract. They do not run an Expo device or prove native SQLite durability.
 
 ## Source excerpt
 
-From [src/lib/sync.ts](../src/lib/sync.ts).
+From [src/lib/sync.ts](../src/lib/sync.ts), lines 31-55.
 
 ```ts
 /** Serial sync bound to the auth generation that issued each request. */
@@ -38,23 +54,6 @@ export class ProgressSyncCoordinator {
   updateSessionTokens(tokens: AuthTokens): void {
     if (this.tokens?.user.id === tokens.user.id) this.tokens = tokens;
   }
-
-  applyUserUpdate(
-    snapshot: SyncSessionSnapshot,
-    user: AuthTokens["user"],
-  ): AuthTokens | null {
-    if (
-      snapshot.generation !== this.generation ||
-      this.tokens?.user.id !== snapshot.tokens.user.id
-    ) {
-      return null;
-    }
-    // Preserve credentials that may have refreshed while updateMe was in flight.
-    this.tokens = { ...this.tokens, user };
-    return this.tokens;
-  }
-
-  sync(): Promise<void> {
 ```
 
 ## Course navigation

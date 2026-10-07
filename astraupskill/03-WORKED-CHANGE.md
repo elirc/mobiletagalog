@@ -4,13 +4,15 @@ Follow one sync attempt from queue to publication. The coordinator captures the 
 
 When the operation starts, it reads at most five hundred outbox events and sends that batch with the active credentials. A 401 can trigger one refresh if the generation is still current. Other failures propagate without pretending progress was committed. After a successful push, the final generation and user checks run before any local acknowledgement.
 
-The returned identifiers are intersected with the sent batch. commitSyncedProgress writes the new baseline and deletes those identifiers in one SQLite transaction. Publishing reads the remaining outbox after the commit, so newly recorded events are preserved in the displayed state.
+The returned identifiers are intersected with the sent batch. `commitSyncedProgress` writes the new baseline and deletes those identifiers in one SQLite transaction. Publishing reads the remaining outbox after the commit (`sync.ts:103`), so newly recorded events are preserved in the displayed state.
+
+What changed relative to the original provider ([snapshot](snapshots/src__lib__progress.tsx.original.txt)): the inline sync logic in `progress.tsx` was replaced by the coordinator (`progress.tsx:42-69`), and the separate baseline write plus `outboxClear` were replaced by the single-transaction `commitSyncedProgress` (`storage.ts:42-52`, absent from [the storage snapshot](snapshots/src__lib__storage.ts.original.txt)).
 
 The provider's adoption and logout paths invalidate old work before replacing account data. Guest-to-account adoption keeps guest events for synchronization; account A to account B wipes A's baseline and outbox. The delayed timezone response goes through applyUserUpdate instead of assigning captured credentials directly. These changes address different races with the same ownership principle: asynchronous results may mutate local account state only while their issuing session remains active.
 
 ## Source excerpt
 
-From [src/lib/sync.ts](../src/lib/sync.ts).
+From [src/lib/sync.ts](../src/lib/sync.ts), lines 79-105.
 
 ```ts
   private async runOnce(requestedGeneration: number): Promise<void> {

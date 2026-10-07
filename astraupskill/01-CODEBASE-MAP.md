@@ -1,16 +1,26 @@
 # Map baseline, outbox, and authentication state
 
-storage.ts owns the device SQLite connection, key-value records, and outbox rows. commitSyncedProgress writes the server baseline and deletes only acknowledged identifiers inside withTransactionSync. outboxAdd preserves first-write-wins event identity through INSERT OR IGNORE. outboxAll provides the accepted local remainder used for display.
+Mobiletagalog is an Expo 53 / React Native 0.79 Tagalog course app (expo-router screens in `app/`, logic in `src/`). Progress is event-sourced: visible progress = last server baseline + unsent local events. Three files carry the sync story.
 
-sync.ts contains the framework-independent coordinator. Its dependencies describe the boundaries needed for a sync attempt: read the outbox, push a batch, refresh credentials, commit acknowledgement, and publish tokens or progress. This interface makes delayed network responses testable without mounting the entire mobile app.
+| File | Lines | Role |
+|---|---|---|
+| [src/lib/storage.ts](../src/lib/storage.ts) | 43-52 `commitSyncedProgress`; 54-65 `outboxAdd`; 67-71 `outboxAll`; 83-86 `wipeAll` | Device SQLite (`expo-sqlite`). The commit writes the `baseline` kv row and deletes acknowledged outbox ids inside one `withTransactionSync`. `outboxAdd` uses `INSERT OR IGNORE`, so the first write of an event id wins. |
+| [src/lib/sync.ts](../src/lib/sync.ts) | 14-20 `authAdoptionMode`; 22-29 dependency interface; 32-105 `ProgressSyncCoordinator` | Framework-independent. Dependencies are injected (read outbox, push, refresh, commit, publish tokens, publish progress), so delayed responses are testable without React. |
+| [src/lib/progress.tsx](../src/lib/progress.tsx) | 44-69 wiring; 81-84 `addEvents`; 90-104 `adoptAuth`; 106-112 `logout`; 114-118 2-second sync timer; 127-141 timezone effect | Connects the coordinator to React, the real API, and storage. |
+| [src/core/events.ts](../src/core/events.ts) | 71 `reduceEvents` | Pure reducer: baseline + outbox → `UserProgress`. It never decides whether a response is current. |
 
-progress.tsx connects the coordinator to React and the actual API/storage functions. addEvents persists then rereads the outbox. syncNow delegates to the coordinator. adoptAuth distinguishes guest adoption from a true account switch; logout advances the session generation before clearing account state. The timezone effect captures a session snapshot and applies a returned user profile only if that snapshot still belongs to the active generation.
+Who calls in: `LessonPlayer.tsx:96` and `app/stats.tsx:229` call `addEvents`; `AuthScreen.tsx:31` calls `adoptAuth`; `app/index.tsx:89` wires the logout button.
 
-The core reducer combines the baseline and unsent events into visible progress. It does not decide whether a remote response is current. That decision belongs in the coordinator before storage mutation. When diagnosing a mismatch, inspect the sent batch, acknowledged IDs, active generation, and persisted remainder before changing the reducer. Each boundary answers a different question: what was sent, what was accepted, who owns the response, and what remains local.
+Two facts worth knowing before you read the chapters:
+
+- The production `push` adapter (`progress.tsx:47-54`) acknowledges **every** sent event (`events.map((event) => event.id)`) and ignores the `rejected: string[]` field that `api.sync` returns (`api.ts:54`). The coordinator's sent-batch intersection (`sync.ts:100-101`) is therefore a defensive guard for a future adapter; it never filters anything today.
+- `outboxClear` (`storage.ts:73-77`) is no longer called anywhere; `commitSyncedProgress` replaced it.
+
+When diagnosing a mismatch, inspect the sent batch, acknowledged ids, active generation, and persisted remainder before changing the reducer. Each answers a different question: what was sent, what was accepted, who owns the response, and what remains local.
 
 ## Source excerpt
 
-From [src/lib/progress.tsx](../src/lib/progress.tsx).
+From [src/lib/progress.tsx](../src/lib/progress.tsx), lines 90-122.
 
 ```tsx
   const adoptAuth = useCallback(async (tokens: AuthTokens) => {

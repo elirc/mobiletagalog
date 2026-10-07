@@ -1,16 +1,54 @@
 # Make the late response deterministic
 
-The synchronization tests hold a push response on a promise, add an event while the request is pending, then release the response. The expected acknowledgement contains only the original sent identifier, while the new event remains in the outbox. This reproduces the race directly instead of relying on network timing or a fixed sleep.
+## Test inventory (counted 2026-10-06)
 
-A second test starts overlapping sync calls and tracks active requests. The maximum must remain one, and the queued pass must read the remainder after the earlier commit. Account-change tests replace the session before releasing a response and assert that no baseline or acknowledgement is committed. Another case rejects the stale push with 401 and verifies that refresh is never called.
+| File | `it(` cases | What it covers |
+|---|---|---|
+| `src/lib/sync.test.ts` | 6 | coordinator: in-flight survival, serialization, stale success, stale 401, profile update, adoption mode |
+| `src/lib/storage.test.ts` | 2 | `commitSyncedProgress` against a mocked `expo-sqlite` (`vi.mock`, line 42): one transaction, and rollback when the adapter throws |
+| `src/core/events.test.ts` | 2 | reducer replay after reload; guest overlay de-duplicated by event id |
+| **Total** | **10** | |
 
-Profile-update tests capture a session, log out, and attempt to apply a delayed user response. The result must be null. They then establish an active session, update its access token, and apply a profile response captured before that refresh. The new token must survive.
+Commands (need `npm install` first; this repo has no `node_modules` in git):
 
-Storage tests use a mock Expo SQLite adapter to verify the transaction contract and rollback behavior modeled by that fixture. That is useful regression evidence, but a real device restart or native database failure needs its own verification. When debugging, distinguish a coordinator rejection, an API failure, and a storage commit failure; they occur at different points and support different conclusions about whether progress changed.
+```text
+npm test                                  # vitest run --pool=forks --maxWorkers=1
+npx vitest run src/lib/sync.test.ts       # just the coordinator
+npm run typecheck                         # tsc --noEmit
+```
+
+## How the race is reproduced
+
+The synchronization tests hold a push response on a promise, add an event while the request is pending, then release the response. In the first test (`sync.test.ts:66-80`) the acknowledgement contains only the sent id `a`, and the newly appended `b` must remain in the outbox. This reproduces the race directly instead of relying on network timing or a sleep.
+
+The second test (lines 82-113) starts two overlapping `sync()` calls and tracks active requests: the maximum must stay one, and the queued pass must send only `b`. The third (115-130) replaces the session with a *different user* before releasing a successful response and asserts nothing is committed. The fourth (132-148) rejects the stale push with 401 and asserts `refresh` is never called. The fifth (150-167) checks `applyUserUpdate` after logout returns `null`, then that a refreshed access token survives a late profile response.
+
+Storage tests use a mocked Expo SQLite adapter to verify the transaction contract and rollback behavior *modeled by that fixture*. A real device restart or native database failure needs its own verification.
+
+## What the suite does not pin down
+
+On 2026-10-06 each line below was mutated in a scratch copy of `sync.ts` and the six coordinator tests were re-run (through a small `node:test` shim of the Vitest API, because Vitest is not installed in the clean clone — see [VERIFICATION.md](VERIFICATION.md)). All of these mutations left **6/6 passing**:
+
+| Mutation in `sync.ts` | Why no test notices |
+|---|---|
+| line 101: commit `result.acknowledgedIds` without the intersection | no test returns an id that was not sent |
+| line 99: drop `requestedGeneration !== this.generation` | tests switch to a different user, so the user-id half catches it |
+| line 99: drop the user-id half instead | the generation half catches it |
+| line 93: drop the post-refresh generation check | no test changes session *during* `refresh` |
+| line 80: drop the queued-operation generation check | no test switches session between `sync()` and the queued start |
+| line 103: publish `batch` instead of re-reading the outbox | `onCommit` is a bare `vi.fn()` and is never asserted |
+| line 75: store `operation` itself as the tail | no test makes one attempt fail and then syncs again |
+| line 62: drop the generation check in `applyUserUpdate` | the logout case has `this.tokens === null`, so the user-id check returns `null` anyway |
+
+These are not bugs in the code; they are guarantees the docs describe that the tests do not yet prove. [05-PRACTICE.md](05-PRACTICE.md) turns several into exercises.
+
+## Debugging
+
+Distinguish a coordinator early-return, an API failure, and a storage commit failure; they happen at different points and imply different things about whether progress changed. Note that the provider swallows sync errors (`progress.tsx:87` and `:103`, `.catch(() => {})`), so a failing sync is silent in the UI apart from `pendingCount` not dropping.
 
 ## Source excerpt
 
-From [src/lib/sync.test.ts](../src/lib/sync.test.ts).
+From [src/lib/sync.test.ts](../src/lib/sync.test.ts), lines 82-113.
 
 ```ts
   it("serializes overlaps and lets the queued pass flush the remainder", async () => {
@@ -45,9 +83,6 @@ From [src/lib/sync.test.ts](../src/lib/sync.test.ts).
     expect(push.mock.calls[1]![1].map((item) => item.id)).toEqual(["b"]);
     expect(f.outbox()).toEqual([]);
   });
-
-  it("discards a response after logout or account replacement", async () => {
-    let resolveResult!: (value: ProgressSyncResult) => void;
 ```
 
 ## Course navigation

@@ -8,9 +8,13 @@ Restart the trace but insert logout before the response. setSession advances the
 
 Finally, add a timezone request to the active-session trace and refresh credentials while it waits. The profile response may update the current user, but it must retain the newly refreshed access token. These timelines let you identify exactly which guard protects each callback and what state a failed assertion would implicate.
 
+Add one more timeline the suite does not cover: logout, then log back in as the **same** user before the old response arrives. Mark the line in `sync.ts` that rejects it (the generation half of line 99) and note that the user-id half alone would accept it.
+
+**Check:** label each guard in your diagram with its `sync.ts` line (80, 91, 93, 99, 101, 103) and, for each, the test in `sync.test.ts` that fails when it is removed — or "none" (compare with the mutation table in [04](04-TESTING-AND-DEBUGGING.md); you should end up with only two lines that have a failing test).
+
 ## Source excerpt
 
-From [src/lib/progress.tsx](../src/lib/progress.tsx).
+From [src/lib/progress.tsx](../src/lib/progress.tsx), lines 127-145.
 
 ```tsx
   useEffect(() => {

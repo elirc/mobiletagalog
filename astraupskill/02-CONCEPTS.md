@@ -4,13 +4,15 @@ User identity alone is not a sufficient stale-response guard. A user can log out
 
 Queued operations check the captured generation before reading the outbox or making a request. In-flight operations check again before committing a result. The refresh branch checks before requesting new credentials and after refresh completes. These checks prevent a late unauthorized response from initiating a refresh for an abandoned account and prevent returned credentials from restoring a logged-out session.
 
-The acknowledgement boundary is narrower than clearing the outbox. Only identifiers present in the sent batch may be removed. A server response containing an unrelated identifier is intersected with that batch. Events added while the request was pending remain in storage and are included in the next derived view.
+The acknowledgement boundary is narrower than clearing the outbox. Only identifiers present in the sent batch may be removed: `sync.ts:100-101` intersects whatever the push dependency returns with the batch. Today that is belt-and-braces — the production adapter (`progress.tsx:53`) builds its acknowledgements *from* the sent batch, so nothing unrelated can arrive. The rule matters the day someone changes the adapter to trust a server-supplied id list. Events added while the request was pending remain in storage and are included in the next derived view.
 
-Profile updates have a related but distinct rule. A returned user profile may be current while its captured access token is outdated because refresh occurred in the meantime. applyUserUpdate checks the generation and account, then combines the returned user with the coordinator's current tokens. This preserves newer credentials instead of rebuilding authentication from an old closure. The tests exercise both logout rejection and refreshed-token preservation.
+Profile updates have a related but distinct rule. A returned user profile may be current while its captured access token is outdated because refresh occurred in the meantime. `applyUserUpdate` (`sync.ts:57-70`) checks the generation and account, then combines the returned user with the coordinator's *current* tokens. This preserves newer credentials instead of rebuilding authentication from an old closure.
+
+**Generation vs identity, honestly.** The guard at `sync.ts:99` checks both `requestedGeneration !== this.generation` and `this.tokens?.user.id !== tokens.user.id`. The existing tests only switch to a *different* user or to logged-out (`tokens` null), so the identity half alone is enough to pass them. The case that needs the generation — log out, then log back in as the *same* user while the old request is pending — is described above but has no test. Mutation runs on 2026-10-06 confirmed that deleting either half of line 99 leaves all six coordinator tests green (see [06](06-SOLUTIONS-AND-REVIEW.md)).
 
 ## Source excerpt
 
-From [src/lib/sync.ts](../src/lib/sync.ts).
+From [src/lib/sync.ts](../src/lib/sync.ts), lines 57-76.
 
 ```ts
   applyUserUpdate(
